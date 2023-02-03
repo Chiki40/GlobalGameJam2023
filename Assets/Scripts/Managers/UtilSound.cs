@@ -2,14 +2,12 @@ using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.Audio;
 
-public class UtilSound : Singleton
+public class UtilSound : Singleton<UtilSound>
 {
     [SerializeField]
     private AudioMixerGroup _audioMixer = null;
 
     public AudioClip[] clips;
-
-    public static UtilSound instance = null;
 
     private List<GameObject> sounds = null;
     private Dictionary<string, AudioClip> _clipsDictionary;

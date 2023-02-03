@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
 
-public class CommonManagers : Singleton
+public class CommonManagers : Singleton<CommonManagers>
 {
 	[SerializeField]
 	protected PlayableDirector transitionPlayable;

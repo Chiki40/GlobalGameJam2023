@@ -9,6 +9,6 @@ public class Lighthouse : MonoBehaviour
 
     private void Update()
     {
-        transform.localEulerAngles += new Vector3(0.0f, _rotationSpeed * Time.deltaTime, 0.0f);
+        _transform.localEulerAngles += new Vector3(0.0f, _rotationSpeed * Time.deltaTime, 0.0f);
     }
 }

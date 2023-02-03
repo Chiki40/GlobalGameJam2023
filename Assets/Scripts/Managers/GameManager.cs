@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager : Singleton
+public class GameManager : Singleton<GameManager>
 {
 	private bool _gamePlaying = false;
 	public bool GamePlaying => _gamePlaying;
