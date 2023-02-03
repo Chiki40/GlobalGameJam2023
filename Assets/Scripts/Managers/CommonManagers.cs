@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 
-public class CommonManagers : Singleton
+public class CommonManagers : Singleton<CommonManagers>
 {
 	private void Start()
 	{
