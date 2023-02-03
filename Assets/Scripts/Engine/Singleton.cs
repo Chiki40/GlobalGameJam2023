@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class Singleton : MonoBehaviour
 {
-    private Singleton _instance;
-    public Singleton Instance => _instance;
+    private static Singleton _instance;
+    public static Singleton Instance => _instance;
 
     protected virtual void Awake()
 	{
