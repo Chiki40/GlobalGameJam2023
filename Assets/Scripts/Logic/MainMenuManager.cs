@@ -5,12 +5,12 @@ public class MainMenuManager : MonoBehaviour
 {
 	public void OnStart()
 	{
-		SceneManager.LoadScene("Game");
+		((CommonManagers)CommonManagers.Instance).GoToGameFromMainMenu();
 	}
 
 	public void OnCredits()
 	{
-		SceneManager.LoadScene("Credits");
+		((CommonManagers)CommonManagers.Instance).GoToCreditsFromMainMenu();
 	}
 
 	public void OnExit()
