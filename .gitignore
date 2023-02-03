@@ -13,6 +13,8 @@
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
 
+UserSettings/**/*
+
 # Uncomment this line if you wish to ignore the asset store tools plugin
 # /[Aa]ssets/AssetStoreTools*
 
@@ -21,6 +23,7 @@
 
 # Visual Studio cache directory
 .vs/
+.vsconfig
 
 # Gradle cache directory
 .gradle/
@@ -51,10 +54,29 @@ ExportedObj/
 # Unity3D generated file on crash reports
 sysinfo.txt
 
+# Unity3D Editor Settings
+/UserSettings/EditorUserSettings.asset
+
+# Wwise project
+/ProjectApril_WwiseProject/*.validationcache
+/ProjectApril_WwiseProject/*.wsettings
+/ProjectApril_WwiseProject/IncrementalSoundBankData.xml
+/ProjectApril_WwiseProject/Originals/**/*.akd
+/ProjectApril_WwiseProject/.cache/**/*
+/ProjectApril_WwiseProject/.backup/**/*
+/Assets/Wwise/**/*.ilk*
+/Assets/Wwise/**/*.exe*
+
+# TVE
+/Assets/BOXOPHOBIC/The Vegetation Engine/Core/**/*unitypackage.meta
+
+# PolyverseWind
+/Assets/BOXOPHOBIC/Polyverse Wind/Core/**/*unitypackage.meta
+
 # Builds
 *.apk
 *.unitypackage
 
 # Crashlytics generated file
 crashlytics-build.properties
-
+Recordings/
