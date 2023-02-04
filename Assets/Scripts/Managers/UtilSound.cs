@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.Audio;
+using System.Collections;
 
 public class UtilSound : MonoBehaviour
 {
@@ -93,7 +94,7 @@ public class UtilSound : MonoBehaviour
     {
         GameObject newObject = new GameObject(); // New scene object
         AudioSource newSource = newObject.AddComponent<AudioSource>(); // Create a new AudioSouce and set it to the new object
-        newObject.name = name; // Assign the given clip name
+        newObject.name = clip.name; // Assign the given clip name
         newSource.clip = clip; // Assign clip to new AudioSource
         newSource.volume = volume;
         newSource.loop = loop; // Assign given loop property
@@ -112,6 +113,38 @@ public class UtilSound : MonoBehaviour
         sounds.Add(newSource.gameObject); // Store the new AudioSource
     }
 
+    IEnumerator FadeOutCoroutine(float fadeTime, AudioSource audio)
+    {
+        float currentVolume = audio.volume;
+        while (currentVolume > 0)
+        {
+            currentVolume -= Time.deltaTime * fadeTime;
+            audio.volume = currentVolume;
+            yield return null;
+        }
+        audio.volume = 0;
+        StopSound(audio.gameObject);
+        
+    }
+    public void StopSound(string name, float fadeTime)
+    {
+        if (fadeTime > 0)
+        {
+            for (int i = 0; i < sounds.Count; ++i)
+            {
+                if (sounds[i].name == name)
+                {
+                    StartCoroutine(FadeOutCoroutine(fadeTime,sounds[i].GetComponent<AudioSource>()));
+                    break;
+                }
+            }
+        }
+        else
+        {
+            StopSound(name);
+        }
+    }
+
     public void StopSound(string name)
     {
         if (sounds == null) { return; }
@@ -119,13 +152,17 @@ public class UtilSound : MonoBehaviour
         {
             if (sounds[i].name == name)
             {
-                Destroy(sounds[i]); // Destroy the AudioSource
-                sounds.RemoveAt(i); // Remove from the list
+                StopSound(sounds[i]);
                 break; // Just the oldest sound with that name
             }
         }
     }
 
+    protected void StopSound(GameObject sound)
+    {
+        Destroy(sound); // Destroy the AudioSource
+        sounds.Remove(sound); // Remove from the list
+    }
     public void StopAllSounds()
     {
         if (sounds == null) { return; }
