@@ -92,6 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 568a0b0ad18b91b4895680d502663f43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  transitionPlayable: {fileID: 0}
 --- !u!114 &4842981616690321800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,6 +177,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3670779139397764905}
     m_Modifications:
+    - target: {fileID: 9222095793169389290, guid: d1cbb7d91896e8949aaf9a7dd937fbef, type: 3}
+      propertyPath: clips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222095793169389290, guid: d1cbb7d91896e8949aaf9a7dd937fbef, type: 3}
+      propertyPath: clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: d510fb28078941448bfc6aa83f70743a, type: 3}
     - target: {fileID: 9222095793169389291, guid: d1cbb7d91896e8949aaf9a7dd937fbef, type: 3}
       propertyPath: m_RootOrder
       value: 0
