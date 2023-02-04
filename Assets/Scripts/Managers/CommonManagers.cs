@@ -9,6 +9,10 @@ public class CommonManagers : MonoBehaviour
 	protected PlayableDirector _gameFromMainMenuPlayable;
 	[SerializeField]
 	protected PlayableDirector _mainMenuFromGamePlayable;
+	[SerializeField]
+	protected PlayableDirector _creditsFromMainMenuPlayable;
+	[SerializeField]
+	protected PlayableDirector _mainMenuFromCreditsPlayable;
 
 	private static CommonManagers _instance;
 	public static CommonManagers Instance => _instance;
@@ -28,25 +32,55 @@ public class CommonManagers : MonoBehaviour
 	public void OnFinishedGoToCreditsFromMainMenu()
 	{
 		SceneManager.UnloadSceneAsync("MainMenu");
+		CreditsManager creditsManager = FindObjectOfType<CreditsManager>();
+		if (creditsManager != null)
+		{
+			creditsManager.ShowCredits();
+		}
 	}
 
 	public void GoToCreditsFromMainMenu()
 	{
-		SceneManager.LoadScene("Credits", LoadSceneMode.Additive);
-		// TODO: Transition to Credits
-		OnFinishedGoToCreditsFromMainMenu();
+		IEnumerator GoToCreditsFromMainMenuCoroutine()
+		{
+			SceneManager.LoadScene("Credits", LoadSceneMode.Additive);
+			yield return null;
+			CreditsManager creditsManager = FindObjectOfType<CreditsManager>();
+			if (creditsManager != null)
+			{
+				creditsManager.InstantHide();
+			}
+			_creditsFromMainMenuPlayable.Play();
+		}
+
+		StartCoroutine(GoToCreditsFromMainMenuCoroutine());
 	}
 
 	public void OnFinishedGoToMainMenuFromCredits()
 	{
 		SceneManager.UnloadSceneAsync("Credits");
+		MainMenuManager menuManager = FindObjectOfType<MainMenuManager>();
+		if (menuManager != null)
+		{
+			menuManager.Return();
+		}
 	}
 
 	public void GoToMainMenuFromCredits()
 	{
-		SceneManager.LoadScene("MainMenu", LoadSceneMode.Additive);
-		// TODO: Transition to MainMenu
-		OnFinishedGoToMainMenuFromCredits();
+		IEnumerator GoToMainMenuFromCreditsCoroutine()
+		{
+			SceneManager.LoadScene("MainMenu", LoadSceneMode.Additive);
+			yield return null;
+			MainMenuManager menuManager = FindObjectOfType<MainMenuManager>();
+			if (menuManager != null)
+			{
+				menuManager.InstantHide();
+			}
+			_mainMenuFromCreditsPlayable.Play();
+		}
+
+		StartCoroutine(GoToMainMenuFromCreditsCoroutine());
 	}
 
 	public void OnFinishedGoToGameFromMainMenu()
@@ -57,8 +91,6 @@ public class CommonManagers : MonoBehaviour
 
 	public void GoToGameFromMainMenu()
 	{
-		_gameFromMainMenuPlayable.enabled = false;
-		_gameFromMainMenuPlayable.enabled = true;
 		_gameFromMainMenuPlayable.Play();
 	}
 
@@ -82,8 +114,6 @@ public class CommonManagers : MonoBehaviour
 			{
 				menuManager.InstantHide();
 			}
-			_mainMenuFromGamePlayable.enabled = false;
-			_mainMenuFromGamePlayable.enabled = true;
 			_mainMenuFromGamePlayable.Play();
 		}
 
