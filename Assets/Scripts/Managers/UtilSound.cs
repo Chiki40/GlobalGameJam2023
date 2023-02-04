@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.Audio;
 
-public class UtilSound : Singleton<UtilSound>
+public class UtilSound : MonoBehaviour
 {
     [SerializeField]
     private AudioMixerGroup _audioMixer = null;
@@ -14,7 +14,22 @@ public class UtilSound : Singleton<UtilSound>
 
     private bool _focus = true;
 
-    private void Start()
+    private static UtilSound _instance;
+    public static UtilSound Instance => _instance;
+
+	private void Awake()
+	{
+        if (_instance == null)
+        {
+            _instance = this;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
+	private void Start()
     {
         sounds = new List<GameObject>();
         _clipsDictionary = new Dictionary<string, AudioClip>();
