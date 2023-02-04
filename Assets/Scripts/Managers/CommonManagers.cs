@@ -34,6 +34,7 @@ public class CommonManagers : MonoBehaviour
 	{
 		SceneManager.LoadScene("Credits", LoadSceneMode.Additive);
 		// TODO: Transition to Credits
+		OnFinishedGoToCreditsFromMainMenu();
 	}
 
 	public void OnFinishedGoToMainMenuFromCredits()
@@ -45,6 +46,7 @@ public class CommonManagers : MonoBehaviour
 	{
 		SceneManager.LoadScene("MainMenu", LoadSceneMode.Additive);
 		// TODO: Transition to MainMenu
+		OnFinishedGoToMainMenuFromCredits();
 	}
 
 	public void OnFinishedGoToGameFromMainMenu()
