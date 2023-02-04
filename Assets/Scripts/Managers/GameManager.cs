@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
 	[SerializeField]
 	protected SpriteRenderer _character;
 	[SerializeField]
+	protected GameObject _characterMonologueGameObject;
+	[SerializeField]
 	protected TextMeshProUGUI _dialogue;
 	[SerializeField]
 	protected Canvas _treeCanvas;
@@ -132,6 +134,7 @@ public class GameManager : MonoBehaviour
 			CommonManagers.Instance.GoToGameFromGameCharacter();
 			_gameState = EGameState.PHOTO;
 			_mainPhotoCollider.enabled = false;
+			_characterMonologueGameObject.SetActive(false);
 			StartCoroutine(HideCharacterCoroutine());
 		}
 	}
@@ -148,6 +151,7 @@ public class GameManager : MonoBehaviour
 			yield return new WaitForSeconds(1.5f);
 			_mainPhotoCollider.enabled = true;
 			_currentCharacterInfo = charInfo;
+			_characterMonologueGameObject.SetActive(true);
 			_gameState = EGameState.CHARACTER;
 			_controlsBlocked = false;
 		}
@@ -187,6 +191,7 @@ public class GameManager : MonoBehaviour
 			CommonManagers.Instance.GoToArbolFromCharacter();
 			_mainPhotoCollider.enabled = false;
 			EnablePhotoColliders(false);
+			_characterMonologueGameObject.SetActive(false);
 			StartCoroutine(HeadingToArbolCoroutine());
 		}
 	}

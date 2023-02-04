@@ -232,7 +232,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &559660661355734092
 RectTransform:
   m_ObjectHideFlags: 0
@@ -364,6 +364,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _introSaw: 0
   _character: {fileID: 5852240430836500910}
+  _characterMonologueGameObject: {fileID: 5183995957465260220}
   _dialogue: {fileID: 6093949826064924551}
   _treeCanvas: {fileID: 9065201499078680458}
   _mainPhotoCollider: {fileID: 0}
