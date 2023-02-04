@@ -45,4 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _audioMixer: {fileID: 0}
-  clips: []
+  clips:
+  - {fileID: 8300000, guid: d510fb28078941448bfc6aa83f70743a, type: 3}

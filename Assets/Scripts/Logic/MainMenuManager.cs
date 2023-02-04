@@ -23,6 +23,7 @@ public class MainMenuManager : MonoBehaviour
 			yield return null;
 			SceneManager.SetActiveScene(SceneManager.GetSceneByName("Game"));
 		}
+		UtilSound.Instance.PlaySound("MainTheme", 1, true);
 		_buttons = transform.GetComponentsInChildren<Button>();
 	}
 
@@ -74,6 +75,8 @@ public class MainMenuManager : MonoBehaviour
 		EnableButtons(false);
 		_goingToGame = true;
 		_timeFading = 0.0f;
+		UtilSound.Instance.PlaySound("Sonido de comienzo");
+		UtilSound.Instance.StopSound("MainTheme",2);
 	}
 
 	public void OnCredits()
