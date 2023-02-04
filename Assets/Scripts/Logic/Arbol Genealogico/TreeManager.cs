@@ -9,6 +9,22 @@ public class TreeManager : MonoBehaviour
     [SerializeField]
     private CaraSelection _caraSelection;
 
+    [SerializeField]
+    private int _timesSetCara = 3;
+
+    private void Start()
+    {
+        //reset everything
+        _selectedGO = null;
+        DesiredCaraID[] allElements = GetComponentsInChildren<DesiredCaraID>();
+
+        for (int i = 0; i < allElements.Length; ++i)
+        {
+            RemoveCaraFromTree(allElements[i].ID, allElements[i].gameObject);
+            allElements[i].GetComponent<Button>().enabled = true;
+        }
+    }
+
     public void SelectCara(GameObject go)
     {
         if(_selectedGO != null)
@@ -23,41 +39,46 @@ public class TreeManager : MonoBehaviour
         if(go.GetComponent<CaraID>() != null)
         {
             _selectedGO = null;
-            RemoveCara(go);
+            RemoveCaraFromTree(go);
         }
         else
         {
-            InsertCara(go);
+            InsertCaraOnTree(go);
         }
     }
 
-    private void InsertCara(GameObject go)
+    private void InsertCaraOnTree(GameObject go)
     {
         if(_selectedGO != null)
         {
             _caraSelection.RemoveCara(_selectedGO.GetComponent<CaraID>().ID);//remove from selection
             CaraID cara = go.AddComponent<CaraID>();
             cara.ID = _selectedGO.GetComponent<CaraID>().ID;
-            ChangeCara(go, _selectedGO);
+            ChangeCaraOnTree(go, _selectedGO);
             _selectedGO = null;
+            CheckTree();
         }
     }
 
-    private void RemoveCara(GameObject go)
+    private void RemoveCaraFromTree(GameObject go)
     {
-        _caraSelection.AddCara(go.GetComponent<CaraID>().ID);//add to selection
-        Destroy(go.GetComponent<CaraID>());
-        ResetCara(go);
+        RemoveCaraFromTree(go.GetComponent<CaraID>().ID, go);
     }
 
-    private void ChangeCara(GameObject target, GameObject source)
+    private void RemoveCaraFromTree(string id, GameObject go)
+    {
+        _caraSelection.AddCara(id);//add to selection
+        ResetCaraOnTree(go);
+    }
+
+    private void ChangeCaraOnTree(GameObject target, GameObject source)
     {
         Image img = target.GetComponent<Image>();
         img.color = Color.white;
         img.sprite = source.GetComponent<Image>().sprite;
     }
 
-    private void ResetCara(GameObject go)
+    private void ResetCaraOnTree(GameObject go)
     {
         Image img = go.GetComponent<Image>();
         img.sprite = null;
@@ -67,32 +88,33 @@ public class TreeManager : MonoBehaviour
     {
         DesiredCaraID[] allElements = GetComponentsInChildren<DesiredCaraID>();
 
-        bool allCorrect = true;
+        int numCorrect = 0;
+
+        List<GameObject> _carasCorrect = new List<GameObject>();
 
         for(int i = 0; i < allElements.Length; ++i)
         {
             if (allElements[i].gameObject.GetComponent<CaraID>() == null)
             {
-                allCorrect = false;
-                //Debug.Log("no hay cara en el boton => " + allElements[i].ID);
                 continue;
             }
 
             CaraID cara = allElements[i].gameObject.GetComponent<CaraID>();
             if(cara.ID.ToLower() == allElements[i].ID.ToLower())
             {
-                Debug.Log("la cara esta bien => " + cara.ID);
-            }
-            else
-            {
-                allCorrect = false;
-                Debug.Log("la cara esta mal => " + cara.ID);
+                ++numCorrect;
+                _carasCorrect.Add(cara.gameObject);
             }
         }
 
-        if(allCorrect)
+      
+        if(numCorrect % _timesSetCara == 0)
         {
-            Debug.Log("Game over");
+            for(int i = 0; i < _carasCorrect.Count; ++i)
+            {
+                _carasCorrect[i].GetComponent<Button>().enabled = false;
+            }
         }
+
     }
 }
