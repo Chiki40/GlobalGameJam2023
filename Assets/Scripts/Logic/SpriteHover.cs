@@ -11,6 +11,7 @@ public class SpriteHover : MonoBehaviour
     Sprite normal;
 
     SpriteRenderer spriteRenderer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,11 +21,11 @@ public class SpriteHover : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        spriteRenderer.sprite = hover;
+        spriteRenderer.sprite = normal;
     }
 
     private void OnMouseExit()
     {
-        spriteRenderer.sprite = normal;
+        spriteRenderer.sprite = hover;
     }
 }
