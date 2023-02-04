@@ -15,7 +15,7 @@ public class Lighthouse : MonoBehaviour
 
     private void Update()
     {
-        _sinTime += Time.deltaTime;
+        _sinTime = (_sinTime + Time.deltaTime) % (2.0f * Mathf.PI);
 
         _transformToRot.localEulerAngles += new Vector3(0.0f, _rotationSpeed * Time.deltaTime, 0.0f);
         _transformToSin.Rotate(new Vector3(Mathf.Sin(_sinTime) * _sinAmplitude, 0.0f, 0.0f));
