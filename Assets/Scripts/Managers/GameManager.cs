@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 	protected SpriteRenderer _character;
 	[SerializeField]
 	protected Cinemachine.CinemachineVirtualCamera _characterCam;
+	[SerializeField]
+	protected Canvas _treeCanvas;
 
 	private static GameManager _instance;
 	public static GameManager Instance => _instance;
@@ -42,6 +44,17 @@ public class GameManager : MonoBehaviour
 
 	private void Update()
 	{
+#if DEBUG
+		if (Input.GetKeyDown(KeyCode.Alpha2))
+		{
+			Time.timeScale = 3.0f;
+		}
+		else if (Input.GetKeyDown(KeyCode.Alpha1))
+		{
+			Time.timeScale = 1.0f;
+		}
+#endif
+
 		if (_gamePlaying && Input.GetKeyDown(KeyCode.Escape))
 		{
 			if (_gameState == EGameState.ROOM)
@@ -51,6 +64,10 @@ public class GameManager : MonoBehaviour
 			else if (_gameState == EGameState.CHARACTER)
 			{
 				ReturnFromCharacterCamera();
+			}
+			else if (_gameState == EGameState.TREE)
+			{
+				ReturnFromTree();
 			}
 		}
 	}
@@ -92,6 +109,24 @@ public class GameManager : MonoBehaviour
 			_character.gameObject.SetActive(false);
 			_characterCam.Priority = CommonManagers.kLowPriorityCam;
 			CommonManagers.Instance.ReturnFromCharacterCamera();
+			_gameState = EGameState.ROOM;
+		}
+	}
+
+	public void SwitchToTree()
+	{
+		if (_gamePlaying && _gameState == EGameState.ROOM)
+		{
+			_treeCanvas.gameObject.SetActive(true);
+			_gameState = EGameState.TREE;
+		}
+	}
+
+	public void ReturnFromTree()
+	{
+		if (_gamePlaying && _gameState == EGameState.TREE)
+		{
+			_treeCanvas.gameObject.SetActive(false);
 			_gameState = EGameState.ROOM;
 		}
 	}
