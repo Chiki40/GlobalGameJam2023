@@ -6,7 +6,9 @@ using UnityEngine.SceneManagement;
 public class CommonManagers : MonoBehaviour
 {
 	[SerializeField]
-	protected PlayableDirector transitionPlayable;
+	protected PlayableDirector _gameFromMainMenuPlayable;
+	[SerializeField]
+	protected PlayableDirector _mainMenuFromGamePlayable;
 
 	private static CommonManagers _instance;
 	public static CommonManagers Instance => _instance;
@@ -53,7 +55,9 @@ public class CommonManagers : MonoBehaviour
 
 	public void GoToGameFromMainMenu()
 	{
-		transitionPlayable.Play();
+		_gameFromMainMenuPlayable.enabled = false;
+		_gameFromMainMenuPlayable.enabled = true;
+		_gameFromMainMenuPlayable.Play();
 	}
 
 	public void OnFinishedGoToMainMenuFromGame()
@@ -76,7 +80,9 @@ public class CommonManagers : MonoBehaviour
 			{
 				menuManager.InstantHide();
 			}
-			// TODO: Transition to MainMenu
+			_mainMenuFromGamePlayable.enabled = false;
+			_mainMenuFromGamePlayable.enabled = true;
+			_mainMenuFromGamePlayable.Play();
 		}
 
 		StartCoroutine(GoToMainMenuFromGameCoroutine());
