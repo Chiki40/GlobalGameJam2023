@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class CommonManagers : MonoBehaviour
 {
+	private const int kLowPriorityCam = 1000;
+	private const int kHighPriorityCam = 1001;
+
 	[SerializeField]
 	protected PlayableDirector _gameFromMainMenuPlayable;
 	[SerializeField]
@@ -13,6 +16,14 @@ public class CommonManagers : MonoBehaviour
 	protected PlayableDirector _creditsFromMainMenuPlayable;
 	[SerializeField]
 	protected PlayableDirector _mainMenuFromCreditsPlayable;
+	[SerializeField]
+	protected Cinemachine.CinemachineVirtualCamera _gameFromMainMenuCam;
+	[SerializeField]
+	protected Cinemachine.CinemachineVirtualCamera _mainMenuFromGameCam;
+	[SerializeField]
+	protected Cinemachine.CinemachineVirtualCamera _creditsFromMainMenuCam;
+	[SerializeField]
+	protected Cinemachine.CinemachineVirtualCamera _mainMenuFromCreditsCam;
 
 	private static CommonManagers _instance;
 	public static CommonManagers Instance => _instance;
@@ -50,6 +61,10 @@ public class CommonManagers : MonoBehaviour
 			{
 				creditsManager.InstantHide();
 			}
+			_gameFromMainMenuCam.Priority = kLowPriorityCam;
+			_mainMenuFromCreditsCam.Priority = kLowPriorityCam;
+			_mainMenuFromGameCam.Priority = kLowPriorityCam;
+			_creditsFromMainMenuCam.Priority = kHighPriorityCam;
 			_creditsFromMainMenuPlayable.Play();
 		}
 
@@ -77,6 +92,10 @@ public class CommonManagers : MonoBehaviour
 			{
 				menuManager.InstantHide();
 			}
+			_creditsFromMainMenuCam.Priority = kLowPriorityCam;
+			_gameFromMainMenuCam.Priority = kLowPriorityCam;
+			_mainMenuFromGameCam.Priority = kLowPriorityCam;
+			_mainMenuFromCreditsCam.Priority = kHighPriorityCam;
 			_mainMenuFromCreditsPlayable.Play();
 		}
 
@@ -91,6 +110,10 @@ public class CommonManagers : MonoBehaviour
 
 	public void GoToGameFromMainMenu()
 	{
+		_creditsFromMainMenuCam.Priority = kLowPriorityCam;
+		_mainMenuFromCreditsCam.Priority = kLowPriorityCam;
+		_mainMenuFromGameCam.Priority = kLowPriorityCam;
+		_gameFromMainMenuCam.Priority = kHighPriorityCam;
 		_gameFromMainMenuPlayable.Play();
 	}
 
@@ -114,6 +137,10 @@ public class CommonManagers : MonoBehaviour
 			{
 				menuManager.InstantHide();
 			}
+			_creditsFromMainMenuCam.Priority = kLowPriorityCam;
+			_mainMenuFromCreditsCam.Priority = kLowPriorityCam;
+			_gameFromMainMenuCam.Priority = kLowPriorityCam;
+			_mainMenuFromGameCam.Priority = kHighPriorityCam;
 			_mainMenuFromGamePlayable.Play();
 		}
 
