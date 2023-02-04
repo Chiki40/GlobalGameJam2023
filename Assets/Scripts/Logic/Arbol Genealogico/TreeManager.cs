@@ -113,6 +113,7 @@ public class TreeManager : MonoBehaviour
             for(int i = 0; i < _carasCorrect.Count; ++i)
             {
                 _carasCorrect[i].GetComponent<Button>().enabled = false;
+                Debug.Log("hacer algo para marcarlos como bien!!!!!");
             }
         }
 
