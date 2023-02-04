@@ -7,6 +7,9 @@ public class GameManager : MonoBehaviour
 	private enum EGameState { PHOTO = 0, CHARACTER = 1, TREE = 2};
 
 	[SerializeField]
+	protected bool _introSaw = false;
+	public bool introSaw { get { return _introSaw; } }
+	[SerializeField]
 	protected SpriteRenderer _character;
 	[SerializeField]
 	protected TextMeshProUGUI _dialogue;
@@ -82,6 +85,7 @@ public class GameManager : MonoBehaviour
 		if (!_gamePlaying)
 		{
 			_gamePlaying = true;
+			_introSaw = true;
 			SwitchToPhotoCamera(true);
 		}
 	}

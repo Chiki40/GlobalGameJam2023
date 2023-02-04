@@ -13,6 +13,8 @@ public class CommonManagers : MonoBehaviour
 	[SerializeField]
 	protected PlayableDirector _gameFromMainMenuPlayable;
 	[SerializeField]
+	protected PlayableDirector _gameFromMainMenuSpeedPlayable;
+	[SerializeField]
 	protected PlayableDirector _mainMenuFromGamePlayable;
 	[SerializeField]
 	protected PlayableDirector _creditsFromMainMenuPlayable;
@@ -86,9 +88,6 @@ public class CommonManagers : MonoBehaviour
 			{
 				creditsManager.InstantHide();
 			}
-			//StopPlayableDirector(_gameFromMainMenuPlayable);
-			//StopPlayableDirector(_mainMenuFromCreditsPlayable);
-			//StopPlayableDirector(_mainMenuFromGamePlayable);
 			PlayPlayableDirector(_creditsFromMainMenuPlayable);
 		}
 
@@ -118,9 +117,6 @@ public class CommonManagers : MonoBehaviour
 			{
 				menuManager.InstantHide();
 			}
-			//StopPlayableDirector(_creditsFromMainMenuPlayable);
-			//StopPlayableDirector(_gameFromMainMenuPlayable);
-			//StopPlayableDirector(_mainMenuFromGamePlayable);
 			PlayPlayableDirector(_mainMenuFromCreditsPlayable);
 			_creditsAnimator.SetTrigger("CreditsTrigger");
 		}
@@ -132,17 +128,13 @@ public class CommonManagers : MonoBehaviour
 	{
 		_gameCam.Priority = kHighPriorityCam;
 		_mainMenuCam.Priority = kLowPriorityCam;
-		//StopPlayableDirector(_gameFromMainMenuPlayable);
 		SceneManager.UnloadSceneAsync("MainMenu");
 		GameManager.Instance.StartGame();
 	}
 
 	public void GoToGameFromMainMenu()
 	{
-		//StopPlayableDirector(_creditsFromMainMenuPlayable);
-		//StopPlayableDirector(_mainMenuFromCreditsPlayable);
-		//StopPlayableDirector(_mainMenuFromGamePlayable);
-		PlayPlayableDirector(_gameFromMainMenuPlayable);
+		PlayPlayableDirector(GameManager.Instance.introSaw ? _gameFromMainMenuSpeedPlayable:_gameFromMainMenuPlayable);
 	}
 
 	public void OnFinishedGoToMainMenuFromGame()

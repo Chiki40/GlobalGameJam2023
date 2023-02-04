@@ -362,6 +362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2cb90a54d51a384ba2ee0e1737bd1e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _introSaw: 0
   _character: {fileID: 5852240430836500910}
   _dialogue: {fileID: 6093949826064924551}
   _treeCanvas: {fileID: 9065201499078680458}
