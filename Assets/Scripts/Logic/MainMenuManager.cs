@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenuManager : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class MainMenuManager : MonoBehaviour
 	private CanvasGroup _canvasGroup = null;
 	[SerializeField]
 	private float _timeToFade = 2.0f;
+	private Button[] _buttons = null;
 
 	private bool _goingToGame = false;
 	private bool _returning = false;
@@ -21,6 +23,7 @@ public class MainMenuManager : MonoBehaviour
 			yield return null;
 			SceneManager.SetActiveScene(SceneManager.GetSceneByName("Game"));
 		}
+		_buttons = transform.GetComponentsInChildren<Button>();
 	}
 
 	private void Update()
@@ -38,49 +41,54 @@ public class MainMenuManager : MonoBehaviour
 		{
 			_timeFading = Mathf.Min(_timeFading + Time.deltaTime, _timeToFade);
 			_canvasGroup.alpha = _timeFading / _timeToFade;
+			if (_timeFading >= _timeToFade)
+			{
+				EnableButtons(true);
+			}
 		}
 	}
 
-	public void Return()
+	private void EnableButtons(bool enable)
 	{
-		if (!_returning)
+		for (int i = 0; i < _buttons.Length; ++i)
 		{
-			_timeFading = 0.0f;
-			_returning = true;
+			_buttons[i].interactable = enable;
 		}
 	}
 
 	public void InstantHide()
 	{
 		_canvasGroup.alpha = 0.0f;
+		EnableButtons(false);
+	}
+
+	public void Return()
+	{
+		EnableButtons(false);
+		_returning = true;
+		_timeFading = 0.0f;
 	}
 
 	public void OnStart()
 	{
-		if (!_goingToGame && !_returning)
-		{
-			_goingToGame = true;
-			_timeFading = 0.0f;
-		}
+		EnableButtons(false);
+		_goingToGame = true;
+		_timeFading = 0.0f;
 	}
 
 	public void OnCredits()
 	{
-		if (!_goingToGame && !_returning)
-		{
-			CommonManagers.Instance.GoToCreditsFromMainMenu();
-		}
+		EnableButtons(false);
+		CommonManagers.Instance.GoToCreditsFromMainMenu();
 	}
 
 	public void OnExit()
 	{
-		if (!_goingToGame && !_returning)
-		{
 #if !UNITY_EDITOR
-			Application.Quit();
+		Application.Quit();
 #else
-			UnityEditor.EditorApplication.ExitPlaymode();
+		UnityEditor.EditorApplication.ExitPlaymode();
 #endif
-		}
+		EnableButtons(false);
 	}
 }
