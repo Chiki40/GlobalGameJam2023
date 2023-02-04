@@ -4,16 +4,16 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-	private enum EGameState { ROOM = 0, CHARACTER = 1, TREE = 2};
+	private enum EGameState { PHOTO = 0, CHARACTER = 1, TREE = 2};
 
 	[SerializeField]
 	protected SpriteRenderer _character;
 	[SerializeField]
 	protected TextMeshProUGUI _dialogue;
 	[SerializeField]
-	protected Cinemachine.CinemachineVirtualCamera _characterCam;
-	[SerializeField]
 	protected Canvas _treeCanvas;
+	[SerializeField]
+	protected Collider _photoCollider;
 
 	private static GameManager _instance;
 	public static GameManager Instance => _instance;
@@ -21,7 +21,9 @@ public class GameManager : MonoBehaviour
 	private bool _gamePlaying = false;
 	public bool GamePlaying => _gamePlaying;
 
-	private EGameState _gameState = EGameState.ROOM;
+	private EGameState _gameState = EGameState.PHOTO;
+
+	CharacterInfo _currentCharacterInfo = null;
 
 	private void Awake()
 	{
@@ -60,17 +62,17 @@ public class GameManager : MonoBehaviour
 
 		if (_gamePlaying && Input.GetKeyDown(KeyCode.Escape))
 		{
-			if (_gameState == EGameState.ROOM)
+			if (_gameState == EGameState.PHOTO)
 			{
 				ExitToMainMenu();
 			}
 			else if (_gameState == EGameState.CHARACTER)
 			{
-				ReturnFromCharacterCamera();
+				SwitchToPhotoCamera();
 			}
 			else if (_gameState == EGameState.TREE)
 			{
-				ReturnFromTree();
+				SwitchToCharacterCamera(_currentCharacterInfo);
 			}
 		}
 	}
@@ -80,58 +82,53 @@ public class GameManager : MonoBehaviour
 		if (!_gamePlaying)
 		{
 			_gamePlaying = true;
-			_gameState = EGameState.ROOM;
+			SwitchToPhotoCamera(true);
 		}
 	}
 
 	private void ExitToMainMenu()
 	{
-		if (_gamePlaying && _gameState == EGameState.ROOM)
+		if (_gamePlaying && _gameState == EGameState.PHOTO)
 		{
 			CommonManagers.Instance.GoToMainMenuFromGame();
 			_gamePlaying = false;
 		}
 	}
 
-	public void SwitchToCharacterCamera(CharacterInfo charInfo)
+	public void SwitchToPhotoCamera(bool force = false)
 	{
-		if (_gamePlaying && _gameState == EGameState.ROOM)
+		if (_gamePlaying && (_gameState == EGameState.CHARACTER || force))
 		{
-			CommonManagers.Instance.SwitchToCharacterCamera();
-			_characterCam.Priority = CommonManagers.kHighPriorityCam;
-			_character.sprite = charInfo.CharacterSprite;
-			_dialogue.text = TextsManager.Instance.GetDialogueText(charInfo.CharacterDialogueKey);
-			_character.gameObject.SetActive(true);
-			_gameState = EGameState.CHARACTER;
+			CommonManagers.Instance.GoToGameFromGameCharacter();
+			_character.gameObject.SetActive(false);
+			_gameState = EGameState.PHOTO;
+			_photoCollider.enabled = false;
 		}
 	}
 
-	public void ReturnFromCharacterCamera()
+	public void SwitchToCharacterCamera(CharacterInfo charInfo)
 	{
-		if (_gamePlaying && _gameState == EGameState.CHARACTER)
+		if (_gamePlaying && (_gameState == EGameState.PHOTO || _gameState == EGameState.TREE))
 		{
-			_character.gameObject.SetActive(false);
-			_characterCam.Priority = CommonManagers.kLowPriorityCam;
-			CommonManagers.Instance.ReturnFromCharacterCamera();
-			_gameState = EGameState.ROOM;
+			CommonManagers.Instance.GoToCharacterFromGame();
+			_character.sprite = charInfo.CharacterSprite;
+			_dialogue.text = TextsManager.Instance.GetDialogueText(charInfo.CharacterDialogueKey);
+			_character.gameObject.SetActive(true);
+			_photoCollider.enabled = true;
+			_treeCanvas.gameObject.SetActive(false);
+			_currentCharacterInfo = charInfo;
+			_gameState = EGameState.CHARACTER;
 		}
 	}
 
 	public void SwitchToTree()
 	{
-		if (_gamePlaying && _gameState == EGameState.ROOM)
+		if (_gamePlaying && _gameState == EGameState.CHARACTER)
 		{
+			CommonManagers.Instance.GoToArbolFromCharacter();
 			_treeCanvas.gameObject.SetActive(true);
+			_character.gameObject.SetActive(false);
 			_gameState = EGameState.TREE;
-		}
-	}
-
-	public void ReturnFromTree()
-	{
-		if (_gamePlaying && _gameState == EGameState.TREE)
-		{
-			_treeCanvas.gameObject.SetActive(false);
-			_gameState = EGameState.ROOM;
 		}
 	}
 }
