@@ -1,10 +1,36 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager : Singleton<GameManager>
+public class GameManager : MonoBehaviour
 {
+
+	private static GameManager _instance;
+	public static GameManager Instance => _instance;
+
 	private bool _gamePlaying = false;
 	public bool GamePlaying => _gamePlaying;
+
+	private void Awake()
+	{
+		if (_instance == null)
+		{
+			_instance = this;
+			Init();
+		}
+		else
+		{
+			Destroy(this.gameObject);
+		}
+	}
+
+
+	private void Init()
+	{
+		if (!SceneManager.GetSceneByName("MainMenu").isLoaded)
+		{
+			SceneManager.LoadScene("MainMenu", LoadSceneMode.Additive);
+		}
+	}
 
 	private void Update()
 	{
@@ -26,7 +52,7 @@ public class GameManager : Singleton<GameManager>
 	{
 		if (_gamePlaying)
 		{
-			((CommonManagers)CommonManagers.Instance).GoToMainMenuFromGame();
+			CommonManagers.Instance.GoToMainMenuFromGame();
 			_gamePlaying = false;
 		}
 	}

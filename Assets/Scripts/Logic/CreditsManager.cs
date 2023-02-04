@@ -5,6 +5,6 @@ public class CreditsManager : MonoBehaviour
 {
 	public void OnExit()
 	{
-		((CommonManagers)CommonManagers.Instance).GoToMainMenuFromCredits();
+		CommonManagers.Instance.GoToMainMenuFromCredits();
 	}
 }

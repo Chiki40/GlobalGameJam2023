@@ -3,61 +3,88 @@ using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
 
-public class CommonManagers : Singleton<CommonManagers>
+public class CommonManagers : MonoBehaviour
 {
 	[SerializeField]
-	protected PlayableDirector transitionPlayable;
-	private void Start()
+	protected PlayableDirector _gameFromMainMenuPlayable;
+	[SerializeField]
+	protected PlayableDirector _mainMenuFromGamePlayable;
+
+	private static CommonManagers _instance;
+	public static CommonManagers Instance => _instance;
+
+	private void Awake()
 	{
-		if (!SceneManager.GetSceneByName("Game").isLoaded)
+		if (_instance == null)
 		{
-			SceneManager.LoadScene("Game", LoadSceneMode.Additive);
+			_instance = this;
+		}
+		else
+		{
+			Destroy(this.gameObject);
 		}
 	}
 
+	public void OnFinishedGoToCreditsFromMainMenu()
+	{
+		SceneManager.UnloadSceneAsync("MainMenu");
+	}
 
 	public void GoToCreditsFromMainMenu()
 	{
-		IEnumerator GoToCoroutine()
-		{
-			yield return null;
-			SceneManager.UnloadSceneAsync("MainMenu");
-		}
-
 		SceneManager.LoadScene("Credits", LoadSceneMode.Additive);
-		StartCoroutine(GoToCoroutine());
+		// TODO: Transition to Credits
+	}
+
+	public void OnFinishedGoToMainMenuFromCredits()
+	{
+		SceneManager.UnloadSceneAsync("Credits");
 	}
 
 	public void GoToMainMenuFromCredits()
 	{
-		IEnumerator GoToCoroutine()
-		{
-			yield return null;
-			SceneManager.UnloadSceneAsync("Credits");
-		}
-
 		SceneManager.LoadScene("MainMenu", LoadSceneMode.Additive);
-		StartCoroutine(GoToCoroutine());
+		// TODO: Transition to MainMenu
 	}
 
 	public void OnFinishedGoToGameFromMainMenu()
 	{
 		SceneManager.UnloadSceneAsync("MainMenu");
+		GameManager.Instance.StartGame();
 	}
 
 	public void GoToGameFromMainMenu()
 	{
-		transitionPlayable.Play();
+		_gameFromMainMenuPlayable.enabled = false;
+		_gameFromMainMenuPlayable.enabled = true;
+		_gameFromMainMenuPlayable.Play();
+	}
+
+	public void OnFinishedGoToMainMenuFromGame()
+	{
+		MainMenuManager menuManager = FindObjectOfType<MainMenuManager>();
+		if (menuManager != null)
+		{
+			menuManager.Return();
+		}
 	}
 
 	public void GoToMainMenuFromGame()
 	{
-		IEnumerator GoToCoroutine()
+		IEnumerator GoToMainMenuFromGameCoroutine()
 		{
+			SceneManager.LoadScene("MainMenu", LoadSceneMode.Additive);
 			yield return null;
+			MainMenuManager menuManager = FindObjectOfType<MainMenuManager>();
+			if (menuManager != null)
+			{
+				menuManager.InstantHide();
+			}
+			_mainMenuFromGamePlayable.enabled = false;
+			_mainMenuFromGamePlayable.enabled = true;
+			_mainMenuFromGamePlayable.Play();
 		}
 
-		SceneManager.LoadScene("MainMenu", LoadSceneMode.Additive);
-		StartCoroutine(GoToCoroutine());
+		StartCoroutine(GoToMainMenuFromGameCoroutine());
 	}
 }
