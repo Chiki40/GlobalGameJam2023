@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
 #if DEBUG
 		if (Input.GetKeyDown(KeyCode.Alpha2))
 		{
-			Time.timeScale = 3.0f;
+			Time.timeScale = 15.0f;
 		}
 		else if (Input.GetKeyDown(KeyCode.Alpha1))
 		{
