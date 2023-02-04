@@ -17,7 +17,11 @@ public class GameManager : MonoBehaviour
 	[SerializeField]
 	protected Canvas _treeCanvas;
 	[SerializeField]
-	protected Collider _photoCollider;
+	protected Collider _mainPhotoCollider = null;
+	[SerializeField]
+	protected Transform _photoCollidersParents = null;
+
+	protected Collider2D[] _cachedPhotoColliders = null;
 
 	private static GameManager _instance;
 	public static GameManager Instance => _instance;
@@ -51,6 +55,11 @@ public class GameManager : MonoBehaviour
 		{
 			SceneManager.LoadScene("MainMenu", LoadSceneMode.Additive);
 		}
+	}
+
+	private void Start()
+	{
+		_cachedPhotoColliders = _photoCollidersParents.GetComponentsInChildren<BoxCollider2D>();
 	}
 
 	private void Update()
@@ -113,6 +122,7 @@ public class GameManager : MonoBehaviour
 		{
 			yield return new WaitForSeconds(1.8f);
 			_character.gameObject.SetActive(false);
+			EnablePhotoColliders(true);
 			_controlsBlocked = false;
 		}
 
@@ -121,7 +131,7 @@ public class GameManager : MonoBehaviour
 			_controlsBlocked = true;
 			CommonManagers.Instance.GoToGameFromGameCharacter();
 			_gameState = EGameState.PHOTO;
-			_photoCollider.enabled = false;
+			_mainPhotoCollider.enabled = false;
 			StartCoroutine(HideCharacterCoroutine());
 		}
 	}
@@ -136,7 +146,7 @@ public class GameManager : MonoBehaviour
 		IEnumerator SwitchToCharacterCameraCoroutine()
 		{
 			yield return new WaitForSeconds(1.5f);
-			_photoCollider.enabled = true;
+			_mainPhotoCollider.enabled = true;
 			_currentCharacterInfo = charInfo;
 			_gameState = EGameState.CHARACTER;
 			_controlsBlocked = false;
@@ -150,6 +160,7 @@ public class GameManager : MonoBehaviour
 			_dialogue.text = TextsManager.Instance.GetDialogueText(charInfo.CharacterDialogueKey);
 			_character.gameObject.SetActive(true);
 			_treeCanvas.gameObject.SetActive(false);
+			EnablePhotoColliders(false);
 			StartCoroutine(SwitchToCharacterCameraCoroutine());
 		}
 	}
@@ -174,8 +185,17 @@ public class GameManager : MonoBehaviour
 		{
 			_controlsBlocked = true;
 			CommonManagers.Instance.GoToArbolFromCharacter();
-			_photoCollider.enabled = false;
+			_mainPhotoCollider.enabled = false;
+			EnablePhotoColliders(false);
 			StartCoroutine(HeadingToArbolCoroutine());
+		}
+	}
+
+	private void EnablePhotoColliders(bool enable)
+	{
+		for (int i = 0; i < _cachedPhotoColliders.Length; ++i)
+		{
+			_cachedPhotoColliders[i].enabled = enable;
 		}
 	}
 }
