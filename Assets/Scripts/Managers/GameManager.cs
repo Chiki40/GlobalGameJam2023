@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -23,6 +24,8 @@ public class GameManager : MonoBehaviour
 
 	private bool _gamePlaying = false;
 	public bool GamePlaying => _gamePlaying;
+
+	private bool _controlsBlocked = false;
 
 	private EGameState _gameState = EGameState.PHOTO;
 
@@ -63,7 +66,7 @@ public class GameManager : MonoBehaviour
 		}
 #endif
 
-		if (_gamePlaying && Input.GetKeyDown(KeyCode.Escape))
+		if (!_controlsBlocked && _gamePlaying && Input.GetKeyDown(KeyCode.Escape))
 		{
 			if (_gameState == EGameState.PHOTO)
 			{
@@ -101,38 +104,78 @@ public class GameManager : MonoBehaviour
 
 	public void SwitchToPhotoCamera(bool force = false)
 	{
+		if (_controlsBlocked)
+		{
+			return;
+		}
+
+		IEnumerator HideCharacterCoroutine()
+		{
+			yield return new WaitForSeconds(1.8f);
+			_character.gameObject.SetActive(false);
+			_controlsBlocked = false;
+		}
+
 		if (_gamePlaying && (_gameState == EGameState.CHARACTER || force))
 		{
+			_controlsBlocked = true;
 			CommonManagers.Instance.GoToGameFromGameCharacter();
-			_character.gameObject.SetActive(false);
 			_gameState = EGameState.PHOTO;
 			_photoCollider.enabled = false;
+			StartCoroutine(HideCharacterCoroutine());
 		}
 	}
 
 	public void SwitchToCharacterCamera(CharacterInfo charInfo)
 	{
+		if (_controlsBlocked)
+		{
+			return;
+		}
+
+		IEnumerator SwitchToCharacterCameraCoroutine()
+		{
+			yield return new WaitForSeconds(1.5f);
+			_photoCollider.enabled = true;
+			_currentCharacterInfo = charInfo;
+			_gameState = EGameState.CHARACTER;
+			_controlsBlocked = false;
+		}
+
 		if (_gamePlaying && (_gameState == EGameState.PHOTO || _gameState == EGameState.TREE))
 		{
+			_controlsBlocked = true;
 			CommonManagers.Instance.GoToCharacterFromGame();
 			_character.sprite = charInfo.CharacterSprite;
 			_dialogue.text = TextsManager.Instance.GetDialogueText(charInfo.CharacterDialogueKey);
 			_character.gameObject.SetActive(true);
-			_photoCollider.enabled = true;
 			_treeCanvas.gameObject.SetActive(false);
-			_currentCharacterInfo = charInfo;
-			_gameState = EGameState.CHARACTER;
+			StartCoroutine(SwitchToCharacterCameraCoroutine());
 		}
 	}
 
 	public void SwitchToTree()
 	{
+		if (_controlsBlocked)
+		{
+			return;
+		}
+
+		IEnumerator HeadingToArbolCoroutine()
+		{
+			yield return new WaitForSeconds(2.0f);
+			_character.gameObject.SetActive(false);
+			_treeCanvas.gameObject.SetActive(true);
+			_gameState = EGameState.TREE;
+			_controlsBlocked = false;
+		}
+
 		if (_gamePlaying && _gameState == EGameState.CHARACTER)
 		{
+			_controlsBlocked = true;
 			CommonManagers.Instance.GoToArbolFromCharacter();
-			_treeCanvas.gameObject.SetActive(true);
-			_character.gameObject.SetActive(false);
-			_gameState = EGameState.TREE;
+			_photoCollider.enabled = false;
+			StartCoroutine(HeadingToArbolCoroutine());
 		}
 	}
 }
