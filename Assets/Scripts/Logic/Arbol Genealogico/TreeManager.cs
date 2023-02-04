@@ -11,6 +11,10 @@ public class TreeManager : MonoBehaviour
 
     public void SelectCara(GameObject go)
     {
+        if(_selectedGO != null)
+        {
+            _caraSelection.AddCara(_selectedGO.GetComponent<CaraID>().ID);//add to selection
+        }
         _selectedGO = go;
     }
 

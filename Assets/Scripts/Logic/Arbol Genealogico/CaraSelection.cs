@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CaraSelection : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class CaraSelection : MonoBehaviour
     public void SelectButton(GameObject selection)
     {
         _treeManager.SelectCara(selection);
+        selection.GetComponent<Button>().interactable = false;
     }
 
     public void RemoveCara(string id)
@@ -40,6 +42,7 @@ public class CaraSelection : MonoBehaviour
             if (id == childID)
             {
                 child.SetActive(true);
+                child.GetComponent<Button>().interactable = true;
                 return;
             }
         }
