@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class CommonManagers : MonoBehaviour
 {
-	private const int kLowPriorityCam = 10;
-	private const int kHighPriorityCam = 1000;
+	public const int kLowPriorityCam = 10;
+	public const int kHighPriorityCam = 1000;
 
 	[SerializeField]
 	Animator _creditsAnimator;
@@ -165,5 +165,27 @@ public class CommonManagers : MonoBehaviour
 		}
 
 		StartCoroutine(GoToMainMenuFromGameCoroutine());
+	}
+
+	public void SwitchToCharacterCamera()
+	{
+		StopPlayableDirector(_creditsFromMainMenuPlayable);
+		StopPlayableDirector(_mainMenuFromCreditsPlayable);
+		StopPlayableDirector(_gameFromMainMenuPlayable);
+		StopPlayableDirector(_mainMenuFromGamePlayable);
+
+		_creditsFromMainMenuCam.Priority = kLowPriorityCam;
+		_mainMenuFromCreditsCam.Priority = kLowPriorityCam;
+		_gameFromMainMenuCam.Priority = kLowPriorityCam;
+		_mainMenuFromGameCam.Priority = kLowPriorityCam;
+	}
+
+	public void ReturnFromCharacterCamera()
+	{
+		_creditsFromMainMenuCam.Priority = kLowPriorityCam;
+		_mainMenuFromCreditsCam.Priority = kLowPriorityCam;
+		_mainMenuFromGameCam.Priority = kLowPriorityCam;
+		_gameFromMainMenuCam.Priority = kHighPriorityCam;
+		_gameFromMainMenuPlayable.gameObject.SetActive(true);
 	}
 }
