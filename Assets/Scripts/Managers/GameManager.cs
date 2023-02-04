@@ -196,6 +196,11 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
+	public void CloseDialogue()
+	{
+		_characterMonologueGameObject.SetActive(false);
+	}
+
 	private void EnablePhotoColliders(bool enable)
 	{
 		for (int i = 0; i < _cachedPhotoColliders.Length; ++i)
