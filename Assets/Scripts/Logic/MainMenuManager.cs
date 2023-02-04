@@ -11,8 +11,9 @@ public class MainMenuManager : MonoBehaviour
 	private float _timeToFade = 2.0f;
 	private Button[] _buttons = null;
 
-	private bool _goingToGame = false;
-	private bool _returning = false;
+	private bool _exitingMenuToGame = false;
+	private bool _returningFromGame = false;
+	private bool _exitingMenuToCredits = false;
 	private float _timeFading = 0.0f;
 
 	private IEnumerator Start()
@@ -29,22 +30,34 @@ public class MainMenuManager : MonoBehaviour
 
 	private void Update()
 	{
-		if (_goingToGame)
+		if (_exitingMenuToGame)
 		{
 			_timeFading = Mathf.Min(_timeFading + Time.deltaTime, _timeToFade);
 			_canvasGroup.alpha = 1.0f - (_timeFading / _timeToFade);
 			if (_timeFading >= _timeToFade)
 			{
+				_exitingMenuToGame = false;
 				CommonManagers.Instance.GoToGameFromMainMenu();
 			}
 		}
-		else if (_returning)
+		else if (_returningFromGame)
 		{
 			_timeFading = Mathf.Min(_timeFading + Time.deltaTime, _timeToFade);
 			_canvasGroup.alpha = _timeFading / _timeToFade;
 			if (_timeFading >= _timeToFade)
 			{
+				_returningFromGame = false;
 				EnableButtons(true);
+			}
+		}
+		else if (_exitingMenuToCredits)
+		{
+			_timeFading = Mathf.Min(_timeFading + Time.deltaTime, _timeToFade);
+			_canvasGroup.alpha = 1.0f - (_timeFading / _timeToFade);
+			if (_timeFading >= _timeToFade)
+			{
+				_exitingMenuToCredits = false;
+				CommonManagers.Instance.GoToCreditsFromMainMenu();
 			}
 		}
 	}
@@ -66,14 +79,14 @@ public class MainMenuManager : MonoBehaviour
 	public void Return()
 	{
 		EnableButtons(false);
-		_returning = true;
+		_returningFromGame = true;
 		_timeFading = 0.0f;
 	}
 
 	public void OnStart()
 	{
 		EnableButtons(false);
-		_goingToGame = true;
+		_exitingMenuToGame = true;
 		_timeFading = 0.0f;
 		UtilSound.Instance.PlaySound("Sonido de comienzo");
 		UtilSound.Instance.StopSound("MainTheme",2);
@@ -82,7 +95,7 @@ public class MainMenuManager : MonoBehaviour
 	public void OnCredits()
 	{
 		EnableButtons(false);
-		CommonManagers.Instance.GoToCreditsFromMainMenu();
+		_exitingMenuToCredits = true;
 	}
 
 	public void OnExit()
