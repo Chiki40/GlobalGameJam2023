@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class CommonManagers : MonoBehaviour
 {
-	private const int kLowPriorityCam = 10;
-	private const int kHighPriorityCam = 1000;
+	public const int kLowPriorityCam = 10;
+	public const int kHighPriorityCam = 1000;
 
 	[SerializeField]
 	protected PlayableDirector _gameFromMainMenuPlayable;
@@ -185,5 +185,35 @@ public class CommonManagers : MonoBehaviour
 		}
 
 		StartCoroutine(GoToMainMenuFromGameCoroutine());
+	}
+
+	public void SwitchToCharacterCamera()
+	{
+		_creditsFromMainMenuPlayable.time = 0.0f;
+		_creditsFromMainMenuPlayable.Stop();
+		_creditsFromMainMenuPlayable.Evaluate();
+		_mainMenuFromCreditsPlayable.time = 0.0f;
+		_mainMenuFromCreditsPlayable.Stop();
+		_mainMenuFromCreditsPlayable.Evaluate();
+		_gameFromMainMenuPlayable.time = 0.0f;
+		_gameFromMainMenuPlayable.Stop();
+		_gameFromMainMenuPlayable.Evaluate();
+		_mainMenuFromGamePlayable.time = 0.0f;
+		_mainMenuFromGamePlayable.Stop();
+		_mainMenuFromGamePlayable.Evaluate();
+
+		_creditsFromMainMenuCam.Priority = kLowPriorityCam;
+		_mainMenuFromCreditsCam.Priority = kLowPriorityCam;
+		_gameFromMainMenuCam.Priority = kLowPriorityCam;
+		_mainMenuFromGameCam.Priority = kLowPriorityCam;
+	}
+
+	public void ReturnFromCharacterCamera()
+	{
+		_creditsFromMainMenuCam.Priority = kLowPriorityCam;
+		_mainMenuFromCreditsCam.Priority = kLowPriorityCam;
+		_mainMenuFromGameCam.Priority = kLowPriorityCam;
+
+		_gameFromMainMenuCam.Priority = kHighPriorityCam;
 	}
 }

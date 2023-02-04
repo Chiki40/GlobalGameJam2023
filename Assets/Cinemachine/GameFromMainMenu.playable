@@ -147,7 +147,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: TransitionCamera
+    m_DisplayName: CameraGameFromMainMenu
   m_Markers:
     m_Objects: []
 --- !u!114 &-1410176164202346205
@@ -175,7 +175,7 @@ MonoBehaviour:
     m_Start: 0
     m_ClipIn: 1.200000000000001
     m_Asset: {fileID: 8827680470234827627}
-    m_Duration: 44.55
+    m_Duration: 22.033333333333335
     m_TimeScale: 1
     m_ParentTrack: {fileID: -1410176164202346205}
     m_EaseInDuration: 0
