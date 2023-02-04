@@ -1,6 +1,33 @@
 {
     "dialogues": {
-        "dialogue_1": "Hola",
-        "dialogue_2": "Hola2"
+        "R_Ruth": "",
+        "A_Amapola": "",
+        "1_Daniel": "",
+        "A1_Juan": "",
+        "10_Montse": "",
+        "A11_Pau": "",
+        "A2_Emma": "",
+        "11_Beatriz": "",
+        "A21_Alex": "",
+        "A22_Lucía": "",
+        "B_Bruno": "",
+        "2_Ana": "",
+        "B1_Manuel": "",
+        "B2_Inmaculada": "",
+        "12_Jacobo": "",
+        "B21_Beltran": "",
+        "B22_Leonor": "",
+        "B23_Francisco": "",
+        "B3_Jaime": "",
+        "13_Yerai": "",
+        "B31_Sol": "",
+        "B0_Eloisa": "",
+        "0_Asier": "",
+        "B01_Victor": "",
+        "B01_Laura": "",
+        "C_Carlota": "",
+        "3_Diego": "",
+        "C1_Marina": ""
+      
     }
 }
