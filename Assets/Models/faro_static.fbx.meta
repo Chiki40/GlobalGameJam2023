@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5d62bdbe896ae7c4fbc8f119aebde81d
+guid: ae75edd5b0917354996546a284e6f3ca
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -9,11 +9,6 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: MAT_Black
     second: {fileID: 2100000, guid: f963ec9ccc878ac49a32ea5db9fa6eb9, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: MAT_Glass
-    second: {fileID: 2100000, guid: 33da60f6c00071645a30f9e8c2d4eef7, type: 2}
   materials:
     materialImportMode: 2
     materialName: 1
