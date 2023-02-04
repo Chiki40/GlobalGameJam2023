@@ -65,6 +65,7 @@ public class CommonManagers : MonoBehaviour
 	public void OnFinishedGoToCreditsFromMainMenu()
 	{
 		_creditsCam.Priority = kHighPriorityCam;
+		_mainMenuCam.Priority = kLowPriorityCam;
 		SceneManager.UnloadSceneAsync("MainMenu");
 		CreditsManager creditsManager = FindObjectOfType<CreditsManager>();
 		if (creditsManager != null)
@@ -85,9 +86,9 @@ public class CommonManagers : MonoBehaviour
 			{
 				creditsManager.InstantHide();
 			}
-			StopPlayableDirector(_gameFromMainMenuPlayable);
-			StopPlayableDirector(_mainMenuFromCreditsPlayable);
-			StopPlayableDirector(_mainMenuFromGamePlayable);
+			//StopPlayableDirector(_gameFromMainMenuPlayable);
+			//StopPlayableDirector(_mainMenuFromCreditsPlayable);
+			//StopPlayableDirector(_mainMenuFromGamePlayable);
 			PlayPlayableDirector(_creditsFromMainMenuPlayable);
 		}
 
@@ -97,6 +98,7 @@ public class CommonManagers : MonoBehaviour
 	public void OnFinishedGoToMainMenuFromCredits()
 	{
 		_mainMenuCam.Priority = kHighPriorityCam;
+		_creditsCam.Priority = kLowPriorityCam;
 		SceneManager.UnloadSceneAsync("Credits");
 		MainMenuManager menuManager = FindObjectOfType<MainMenuManager>();
 		if (menuManager != null)
@@ -116,9 +118,9 @@ public class CommonManagers : MonoBehaviour
 			{
 				menuManager.InstantHide();
 			}
-			StopPlayableDirector(_creditsFromMainMenuPlayable);
-			StopPlayableDirector(_gameFromMainMenuPlayable);
-			StopPlayableDirector(_mainMenuFromGamePlayable);
+			//StopPlayableDirector(_creditsFromMainMenuPlayable);
+			//StopPlayableDirector(_gameFromMainMenuPlayable);
+			//StopPlayableDirector(_mainMenuFromGamePlayable);
 			PlayPlayableDirector(_mainMenuFromCreditsPlayable);
 			_creditsAnimator.SetTrigger("CreditsTrigger");
 		}
