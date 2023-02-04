@@ -9,6 +9,8 @@ public class CommonManagers : MonoBehaviour
 	private const int kHighPriorityCam = 1000;
 
 	[SerializeField]
+	Animator _creditsAnimator;
+	[SerializeField]
 	protected PlayableDirector _gameFromMainMenuPlayable;
 	[SerializeField]
 	protected PlayableDirector _mainMenuFromGamePlayable;
@@ -64,6 +66,7 @@ public class CommonManagers : MonoBehaviour
 		{
 			creditsManager.ShowCredits();
 		}
+		_creditsAnimator.SetTrigger("CreditsTrigger");
 	}
 
 	public void GoToCreditsFromMainMenu()
@@ -77,20 +80,10 @@ public class CommonManagers : MonoBehaviour
 			{
 				creditsManager.InstantHide();
 			}
-			_gameFromMainMenuPlayable.time = 0.0f;
-			_gameFromMainMenuPlayable.Stop();
-			_gameFromMainMenuPlayable.Evaluate();
-			_mainMenuFromCreditsPlayable.time = 0.0f;
-			_mainMenuFromCreditsPlayable.Stop();
-			_mainMenuFromCreditsPlayable.Evaluate();
-			_mainMenuFromGamePlayable.time = 0.0f;
-			_mainMenuFromGamePlayable.Stop();
-			_mainMenuFromGamePlayable.Evaluate();
-
-			_gameFromMainMenuCam.Priority = kLowPriorityCam;
-			_mainMenuFromCreditsCam.Priority = kLowPriorityCam;
-			_mainMenuFromGameCam.Priority = kLowPriorityCam;
-			_creditsFromMainMenuPlayable.Play();
+			StopPlayableDirector(_gameFromMainMenuPlayable);
+			StopPlayableDirector(_mainMenuFromCreditsPlayable);
+			StopPlayableDirector(_mainMenuFromGamePlayable);
+			PlayPlayableDirector(_creditsFromMainMenuPlayable);
 		}
 
 		StartCoroutine(GoToCreditsFromMainMenuCoroutine());
@@ -118,20 +111,11 @@ public class CommonManagers : MonoBehaviour
 			{
 				menuManager.InstantHide();
 			}
-			_creditsFromMainMenuPlayable.time = 0.0f;
-			_creditsFromMainMenuPlayable.Stop();
-			_creditsFromMainMenuPlayable.Evaluate();
-			_gameFromMainMenuPlayable.time = 0.0f;
-			_gameFromMainMenuPlayable.Stop();
-			_gameFromMainMenuPlayable.Evaluate();
-			_mainMenuFromGamePlayable.time = 0.0f;
-			_mainMenuFromGamePlayable.Stop();
-			_mainMenuFromGamePlayable.Evaluate();
-
-			_creditsFromMainMenuCam.Priority = kLowPriorityCam;
-			_gameFromMainMenuCam.Priority = kLowPriorityCam;
-			_mainMenuFromGameCam.Priority = kLowPriorityCam;
-			_mainMenuFromCreditsPlayable.Play();
+			StopPlayableDirector(_creditsFromMainMenuPlayable);
+			StopPlayableDirector(_gameFromMainMenuPlayable);
+			StopPlayableDirector(_mainMenuFromGamePlayable);
+			PlayPlayableDirector(_mainMenuFromCreditsPlayable);
+			_creditsAnimator.SetTrigger("CreditsTrigger");
 		}
 
 		StartCoroutine(GoToMainMenuFromCreditsCoroutine());
@@ -150,10 +134,6 @@ public class CommonManagers : MonoBehaviour
 		StopPlayableDirector(_mainMenuFromCreditsPlayable);
 		StopPlayableDirector(_mainMenuFromGamePlayable);
 		PlayPlayableDirector(_gameFromMainMenuPlayable);
-		//_creditsFromMainMenuCam.Priority = kLowPriorityCam;
-		//_mainMenuFromCreditsCam.Priority = kLowPriorityCam;
-		//_mainMenuFromGameCam.Priority = kLowPriorityCam;
-		_gameFromMainMenuPlayable.Play();
 	}
 
 	public void OnFinishedGoToMainMenuFromGame()
@@ -182,11 +162,6 @@ public class CommonManagers : MonoBehaviour
 			StopPlayableDirector(_mainMenuFromCreditsPlayable);
 			StopPlayableDirector(_gameFromMainMenuPlayable);
 			PlayPlayableDirector(_mainMenuFromGamePlayable);
-
-			//_creditsFromMainMenuCam.Priority = kLowPriorityCam;
-			//_mainMenuFromCreditsCam.Priority = kLowPriorityCam;
-			//_gameFromMainMenuCam.Priority = kLowPriorityCam;
-			_mainMenuFromGamePlayable.Play();
 		}
 
 		StartCoroutine(GoToMainMenuFromGameCoroutine());
