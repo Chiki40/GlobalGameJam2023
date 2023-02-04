@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CaraID : MonoBehaviour
+public class DesiredCaraID : MonoBehaviour
 {
     [SerializeField]
     private string _id;
@@ -10,6 +10,5 @@ public class CaraID : MonoBehaviour
     public string ID
     {
         get { return _id; }
-        set { _id = value; }
     }
 }
