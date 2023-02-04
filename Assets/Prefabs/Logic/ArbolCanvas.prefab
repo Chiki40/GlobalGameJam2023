@@ -6397,8 +6397,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6456179912706417156}
   m_HandleRect: {fileID: 2232675773188923605}
   m_Direction: 0
-  m_Value: 0
-  m_Size: 0.5106383
+  m_Value: 0.00000006634255
+  m_Size: 0.51063824
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -8876,7 +8876,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: e50bbcd965fef194ea44b20df13194bb, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
