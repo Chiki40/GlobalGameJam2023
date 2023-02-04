@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class CommonManagers : MonoBehaviour
 {
-	private const int kLowPriorityCam = 1000;
-	private const int kHighPriorityCam = 1001;
+	private const int kLowPriorityCam = 10;
+	private const int kHighPriorityCam = 1000;
 
 	[SerializeField]
 	protected PlayableDirector _gameFromMainMenuPlayable;
