@@ -36,10 +36,11 @@ public class TreeManager : MonoBehaviour
 
     public void SelectTreePosition(GameObject go)
     {
-        if(go.GetComponent<CaraID>() != null)
+        CaraID caraId = go.GetComponent<CaraID>();
+        if (caraId != null)
         {
-            _selectedGO = null;
             RemoveCaraFromTree(go);
+            _selectedGO = null;
         }
         else
         {
@@ -51,9 +52,10 @@ public class TreeManager : MonoBehaviour
     {
         if(_selectedGO != null)
         {
-            _caraSelection.RemoveCara(_selectedGO.GetComponent<CaraID>().ID);//remove from selection
+            CaraID selectedID = _selectedGO.GetComponent<CaraID>();
+            _caraSelection.RemoveCara(selectedID.ID);//remove from selection
             CaraID cara = go.AddComponent<CaraID>();
-            cara.ID = _selectedGO.GetComponent<CaraID>().ID;
+            cara.ID = selectedID.ID;
             ChangeCaraOnTree(go, _selectedGO);
             _selectedGO = null;
             CheckTree();
@@ -82,6 +84,11 @@ public class TreeManager : MonoBehaviour
     {
         Image img = go.GetComponent<Image>();
         img.sprite = null;
+        CaraID caraID = go.GetComponent<CaraID>();
+        if (caraID != null)
+        {
+            Destroy(caraID);
+        }
     }
 
     public void CheckTree()
