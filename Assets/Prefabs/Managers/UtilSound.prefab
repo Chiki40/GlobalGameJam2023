@@ -47,3 +47,4 @@ MonoBehaviour:
   _audioMixer: {fileID: 0}
   clips:
   - {fileID: 8300000, guid: d510fb28078941448bfc6aa83f70743a, type: 3}
+  - {fileID: 8300000, guid: f04c4ce4d6854c242aefd992772d454c, type: 3}
