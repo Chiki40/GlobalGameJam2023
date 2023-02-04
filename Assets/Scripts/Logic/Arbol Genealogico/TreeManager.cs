@@ -40,7 +40,10 @@ public class TreeManager : MonoBehaviour
         if (caraId != null)
         {
             RemoveCaraFromTree(go);
-            _selectedGO = null;
+            if (_selectedGO != null)
+			{
+                InsertCaraOnTree(go);
+            }
         }
         else
         {
