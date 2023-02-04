@@ -173,27 +173,25 @@ public class CommonManagers : MonoBehaviour
 		StartCoroutine(GoToMainMenuFromGameCoroutine());
 	}
 
-	public void SwitchToCharacterCamera()
+	public void GoToCharacterFromGame()
 	{
-		//StopPlayableDirector(_creditsFromMainMenuPlayable);
-		//StopPlayableDirector(_mainMenuFromCreditsPlayable);
-		//StopPlayableDirector(_gameFromMainMenuPlayable);
-		//StopPlayableDirector(_mainMenuFromGamePlayable);
-		//_gameFromMainMenuPlayable.extrapolationMode = DirectorWrapMode.None;
-		//_gameFromMainMenuPlayable.Stop();
-
-		//_creditsFromMainMenuCam.Priority = kLowPriorityCam;
-		//_mainMenuFromCreditsCam.Priority = kLowPriorityCam;
-		//_gameFromMainMenuCam.Priority = kLowPriorityCam;
-		//_mainMenuFromGameCam.Priority = kLowPriorityCam;
 		_characterCam.Priority = kHighPriorityCam;
 		_gameCam.Priority = kLowPriorityCam;
 	}
-
-	public void ReturnFromCharacterCamera()
+	public void GoToGameFromGameCharacter()
 	{
 		_characterCam.Priority = kLowPriorityCam;
 		_gameCam.Priority = kHighPriorityCam;
-		_gameFromMainMenuPlayable.gameObject.SetActive(true);
+	}
+
+	public void GoToArbolFromCharacter()
+	{
+		_arbolCam.Priority = kHighPriorityCam;
+		_characterCam.Priority = kLowPriorityCam;
+	}
+	public void GoToCharacterFromArbol()
+	{
+		_arbolCam.Priority = kLowPriorityCam;
+		_characterCam.Priority = kHighPriorityCam;
 	}
 }
