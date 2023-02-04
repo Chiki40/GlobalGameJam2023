@@ -1040,6 +1040,10 @@ MonoBehaviour:
   _mainMenuFromGamePlayable: {fileID: 9119210262500171890}
   _creditsFromMainMenuPlayable: {fileID: 4820969314478712578}
   _mainMenuFromCreditsPlayable: {fileID: 2095750509891530784}
+  _gameFromMainMenuCam: {fileID: 2071793695}
+  _mainMenuFromGameCam: {fileID: 1334971601903299145}
+  _creditsFromMainMenuCam: {fileID: 1941315148638175696}
+  _mainMenuFromCreditsCam: {fileID: 5561568408352206794}
 --- !u!1 &3750192255948848535
 GameObject:
   m_ObjectHideFlags: 0
@@ -1592,8 +1596,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9076044336443467364}
-  m_LocalRotation: {x: 0.0000034552068, y: -0.11582917, z: 0.0010387219, w: 0.9932686}
-  m_LocalPosition: {x: 21.940847, y: -0.92618436, z: -8.060786}
+  m_LocalRotation: {x: -4.656612e-10, y: -5.820833e-11, z: -2.7105358e-20, w: 1}
+  m_LocalPosition: {x: 1.8769226, y: 37.33664, z: 141.37257}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
