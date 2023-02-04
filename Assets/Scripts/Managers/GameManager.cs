@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,6 +8,8 @@ public class GameManager : MonoBehaviour
 
 	[SerializeField]
 	protected SpriteRenderer _character;
+	[SerializeField]
+	protected TextMeshProUGUI _dialogue;
 	[SerializeField]
 	protected Cinemachine.CinemachineVirtualCamera _characterCam;
 	[SerializeField]
@@ -90,13 +93,14 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
-	public void SwitchToCharacterCamera(Sprite sprite)
+	public void SwitchToCharacterCamera(CharacterInfo charInfo)
 	{
 		if (_gamePlaying && _gameState == EGameState.ROOM)
 		{
 			CommonManagers.Instance.SwitchToCharacterCamera();
 			_characterCam.Priority = CommonManagers.kHighPriorityCam;
-			_character.sprite = sprite;
+			_character.sprite = charInfo.CharacterSprite;
+			_dialogue.text = TextsManager.Instance.GetDialogueText(charInfo.CharacterDialogueKey);
 			_character.gameObject.SetActive(true);
 			_gameState = EGameState.CHARACTER;
 		}
