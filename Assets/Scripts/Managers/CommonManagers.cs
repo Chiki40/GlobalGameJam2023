@@ -211,5 +211,6 @@ public class CommonManagers : MonoBehaviour
 		_mainMenuFromCreditsCam.Priority = kLowPriorityCam;
 		_mainMenuFromGameCam.Priority = kLowPriorityCam;
 		_gameFromMainMenuCam.Priority = kHighPriorityCam;
+		_gameFromMainMenuPlayable.gameObject.SetActive(true);
 	}
 }

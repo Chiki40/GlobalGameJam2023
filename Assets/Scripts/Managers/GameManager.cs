@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 	private enum EGameState { ROOM = 0, CHARACTER = 1, TREE = 2};
 
 	[SerializeField]
-	protected GameObject _character;
+	protected SpriteRenderer _character;
 	[SerializeField]
 	protected Cinemachine.CinemachineVirtualCamera _characterCam;
 
@@ -73,13 +73,14 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
-	public void SwitchToCharacterCamera()
+	public void SwitchToCharacterCamera(Sprite sprite)
 	{
 		if (_gamePlaying && _gameState == EGameState.ROOM)
 		{
 			CommonManagers.Instance.SwitchToCharacterCamera();
 			_characterCam.Priority = CommonManagers.kHighPriorityCam;
-			_character.SetActive(true);
+			_character.sprite = sprite;
+			_character.gameObject.SetActive(true);
 			_gameState = EGameState.CHARACTER;
 		}
 	}
@@ -88,7 +89,7 @@ public class GameManager : MonoBehaviour
 	{
 		if (_gamePlaying && _gameState == EGameState.CHARACTER)
 		{
-			_character.SetActive(false);
+			_character.gameObject.SetActive(false);
 			_characterCam.Priority = CommonManagers.kLowPriorityCam;
 			CommonManagers.Instance.ReturnFromCharacterCamera();
 			_gameState = EGameState.ROOM;

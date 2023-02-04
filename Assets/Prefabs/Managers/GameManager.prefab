@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2cb90a54d51a384ba2ee0e1737bd1e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _character: {fileID: 6612195495121232950}
+  _character: {fileID: 5852240430836500910}
   _characterCam: {fileID: 996753008}
 --- !u!1 &6612195495121232950
 GameObject:
@@ -179,7 +179,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &9017023795186132497
 Transform:
   m_ObjectHideFlags: 0
@@ -241,7 +241,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.2, y: 1.2}
+  m_Size: {x: 1.7066667, y: 3.4133334}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
