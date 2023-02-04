@@ -8,6 +8,8 @@ public class TreeManager : MonoBehaviour
     private GameObject _selectedGO;
     [SerializeField]
     private CaraSelection _caraSelection;
+    [SerializeField]
+    private Color _freeSpriteColor = Color.white;
 
     [SerializeField]
     private int _timesSetCara = 3;
@@ -87,6 +89,7 @@ public class TreeManager : MonoBehaviour
     {
         Image img = go.GetComponent<Image>();
         img.sprite = null;
+        img.color = _freeSpriteColor;
         CaraID caraID = go.GetComponent<CaraID>();
         if (caraID != null)
         {
