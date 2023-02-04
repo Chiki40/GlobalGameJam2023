@@ -101,7 +101,7 @@ MonoBehaviour:
   _transformToRot: {fileID: 3272484147159994086}
   _transformToSin: {fileID: 4379975646989377925}
   _rotationSpeed: 20
-  _sinAmplitude: 0.05
+  _sinAmplitude: 0.035
 --- !u!1 &4379975646989377930
 GameObject:
   m_ObjectHideFlags: 0
