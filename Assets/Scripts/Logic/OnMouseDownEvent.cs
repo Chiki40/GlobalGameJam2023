@@ -8,15 +8,22 @@ public class OnMouseDownEvent : MonoBehaviour
 	private UnityEvent _onMouseDown = null;
 
 	[SerializeField]
-	private UnityEvent _onMouseOver = null;
+	private UnityEvent _onMouseEnter = null;
+	[SerializeField]
+	private UnityEvent _onMouseExit = null;
 
 	private void OnMouseDown()
 	{
 		_onMouseDown?.Invoke();
 	}
 
-	private void OnMouseOver()
+	private void OnMouseEnter()
 	{
-		_onMouseOver?.Invoke();
+		_onMouseEnter?.Invoke();
+	}
+
+	private void OnMouseExit()
+	{
+		_onMouseExit?.Invoke();
 	}
 }
