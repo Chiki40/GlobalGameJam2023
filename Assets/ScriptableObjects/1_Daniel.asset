@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21e611bf1d0997e4b9921be7559c6988, type: 3}
   m_Name: 1_Daniel
   m_EditorClassIdentifier: 
-  CharacterSprite: {fileID: 1036704825, guid: a8056c216f049474285f1dec73871a15, type: 3}
-  CharacterDialogueKey: '"R_Ruth"'
+  CharacterSprite: {fileID: -1757554062, guid: a8056c216f049474285f1dec73871a15, type: 3}
+  CharacterDialogueKey: R_Ruth
