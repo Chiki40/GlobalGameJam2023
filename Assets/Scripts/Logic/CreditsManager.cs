@@ -8,7 +8,7 @@ public class CreditsManager : MonoBehaviour
 	private CanvasGroup _canvasGroup = null;
 	[SerializeField]
 	private float _timeToFade = 2.0f;
-	private Button[] _buttons = null;
+	private Button _exitButton = null;
 
 	private bool _goingToMenu = false;
 	private bool _showingCredits = false;
@@ -16,7 +16,7 @@ public class CreditsManager : MonoBehaviour
 
 	private void Start()
 	{
-		_buttons = transform.GetComponentsInChildren<Button>();
+		_exitButton = transform.GetComponentInChildren<Button>();
 	}
 
 	private void Update()
@@ -41,7 +41,7 @@ public class CreditsManager : MonoBehaviour
 				EnableButtons(true);
 			}
 		}
-		else if (Input.GetKeyDown(KeyCode.Escape))
+		else if (_exitButton.interactable && Input.GetKeyDown(KeyCode.Escape))
 		{
 			OnExit();
 		}
@@ -61,10 +61,7 @@ public class CreditsManager : MonoBehaviour
 
 	private void EnableButtons(bool enable)
 	{
-		for (int i = 0; i < _buttons.Length; ++i)
-		{
-			_buttons[i].interactable = enable;
-		}
+		_exitButton.interactable = enable;
 	}
 
 	public void InstantHide()

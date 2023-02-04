@@ -326,7 +326,7 @@ GameObject:
   - component: {fileID: 2071793698}
   - component: {fileID: 2071793697}
   m_Layer: 0
-  m_Name: TransitionCamera
+  m_Name: CameraGameFromMainMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -449,7 +449,7 @@ GameObject:
   - component: {fileID: 3893163906885306351}
   - component: {fileID: 8258336239899853032}
   m_Layer: 0
-  m_Name: TransitionCamera
+  m_Name: MainMenuFromCreditsCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -629,7 +629,7 @@ GameObject:
   - component: {fileID: 8702038537886459561}
   - component: {fileID: 9036652038675909146}
   m_Layer: 0
-  m_Name: TransitionCamera
+  m_Name: CameraCreditsFromMainMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1222,7 +1222,7 @@ GameObject:
   - component: {fileID: 4437826430548960231}
   - component: {fileID: 1998265101372804825}
   m_Layer: 0
-  m_Name: TransitionCamera
+  m_Name: CameraMainMenuFromGame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1343,7 +1343,7 @@ GameObject:
   - component: {fileID: 6890606319231960206}
   - component: {fileID: 2095750509891530784}
   m_Layer: 0
-  m_Name: TransitionMainMenuFromGame (2)
+  m_Name: TransitionMainMenuFromCredits
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1596,8 +1596,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9076044336443467364}
-  m_LocalRotation: {x: -4.656612e-10, y: -5.820833e-11, z: -2.7105358e-20, w: 1}
-  m_LocalPosition: {x: 1.8769226, y: 37.33664, z: 141.37257}
+  m_LocalRotation: {x: 0.00012291188, y: -0.115829095, z: 0.000014333245, w: 0.9932692}
+  m_LocalPosition: {x: 21.940857, y: -0.926178, z: -8.060787}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1666,15 +1666,15 @@ MonoBehaviour:
   m_UpdateMethod: 2
   m_BlendUpdateMethod: 1
   m_DefaultBlend:
-    m_Style: 1
-    m_Time: 2
+    m_Style: 0
+    m_Time: 0
     m_CustomCurve:
       serializedVersion: 2
       m_Curve: []
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  m_CustomBlends: {fileID: 0}
+  m_CustomBlends: {fileID: 11400000, guid: dcf2010128e5e9b42820e21369dd3bed, type: 2}
   m_CameraCutEvent:
     m_PersistentCalls:
       m_Calls: []
