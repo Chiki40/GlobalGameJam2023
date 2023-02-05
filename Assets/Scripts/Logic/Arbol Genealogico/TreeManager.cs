@@ -129,6 +129,7 @@ public class TreeManager : MonoBehaviour
       
         if (GameManager.Instance.CheckCurrentLevel(numCorrect))
         {
+            UtilSound.Instance.PlaySound("Sonido de comienzo");
             GameManager.Instance.OnLevelCompleted();
         }
 

@@ -19,7 +19,6 @@ public class Clock : MonoBehaviour
         DateTime UTCNow = DateTime.UtcNow;
         TimeSpan offset = TimeZoneInfo.Local.BaseUtcOffset;
         DateTime time = UTCNow + offset;
-        Debug.LogError(time.Hour + ":" + time.Minute);
         float hourLoopCompletionRate = (float)(time.Hour % 12) / 12.0f;
         float minuteLoopCompletionRate = (float)(time.Minute) / 60.0f;
         Vector3 rotation = clockHours.transform.localEulerAngles;
