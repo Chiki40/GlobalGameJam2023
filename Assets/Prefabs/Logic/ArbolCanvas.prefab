@@ -7078,7 +7078,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _caraSelection: {fileID: 774342309838081989}
-  _freeSpriteColor: {r: 0.5888886, g: 1, b: 0.495283, a: 1}
+  _freeSpriteColor: {r: 1, g: 1, b: 1, a: 1}
   _timesSetCara: 3
 --- !u!1 &7203185972722815361
 GameObject:
