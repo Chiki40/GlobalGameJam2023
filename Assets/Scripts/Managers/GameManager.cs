@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
 	{
 		public List<GameObject> fotoCharactersToShow;
 		public List<GameObject> arbolImagesToUnlock;
-		public List<GameObject> arbolImagesToLockAfterCompleted;
+		public List<GameObject> scrollImagesToUnlock;
 		public Image background;
 	}
 
@@ -250,12 +250,23 @@ public class GameManager : MonoBehaviour
 		{
 			imageToUnlock.GetComponent<Button>().enabled = false;
 		}
+
+		foreach (GameObject imageToUnlock in levelData.scrollImagesToUnlock)
+		{
+			imageToUnlock.SetActive(false);
+		}
+
 		levelData.background.enabled = false;
 	}
 
 	private void PrepareLevel(LevelData levelData)
 	{
 		foreach (GameObject imageToUnlock in levelData.arbolImagesToUnlock)
+		{
+			imageToUnlock.SetActive(true);
+		}
+
+		foreach (GameObject imageToUnlock in levelData.scrollImagesToUnlock)
 		{
 			imageToUnlock.SetActive(true);
 		}
