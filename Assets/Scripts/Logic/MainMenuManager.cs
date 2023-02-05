@@ -89,7 +89,6 @@ public class MainMenuManager : MonoBehaviour
 
 	public void OnStart()
 	{
-		UtilSound.Instance.PlaySound("UIClick");
 		EnableButtons(false);
 		_exitingMenuToGame = true;
 		_timeFading = 0.0f;
