@@ -7,6 +7,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: MAT_BOMBILLA
+    second: {fileID: 2100000, guid: a558c5a78aa633646b0e08fee69a8741, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: MAT_Black
     second: {fileID: 2100000, guid: f963ec9ccc878ac49a32ea5db9fa6eb9, type: 2}
   - first:
