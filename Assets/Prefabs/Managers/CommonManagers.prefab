@@ -777,6 +777,8 @@ PlayableDirector:
     value: {fileID: 0}
   - key: {fileID: 2505366255173281107, guid: 771239994243a46498700db8f5a87cd4, type: 2}
     value: {fileID: 5288734560645234731}
+  - key: {fileID: -2925651355657511614, guid: 771239994243a46498700db8f5a87cd4, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References:
     - 4875ec4c0c0484a4a8a1a91f2d10527e: {fileID: 2071793695}
@@ -2938,8 +2940,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 8
-  m_fontSizeBase: 8
+  m_fontSize: 18
+  m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2977,7 +2979,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 10, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &6035556016011320625

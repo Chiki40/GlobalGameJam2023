@@ -32,7 +32,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6244718018308410418}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -5577,7 +5577,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6244718018308410418}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -6991,9 +6991,9 @@ RectTransform:
   - {fileID: 6135595255866643061}
   - {fileID: 4324040819658574886}
   - {fileID: 3726003996931520719}
-  - {fileID: 1337911749}
   - {fileID: 1689169969806619532}
   - {fileID: 6154677615312216543}
+  - {fileID: 1337911749}
   - {fileID: 5049460199295509935}
   - {fileID: 5884162404615458522}
   m_Father: {fileID: 0}
@@ -7079,6 +7079,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _caraSelection: {fileID: 774342309838081989}
   _freeSpriteColor: {r: 1, g: 1, b: 1, a: 1}
+  unknownImage: {fileID: 0}
   _timesSetCara: 3
 --- !u!1 &7203185972722815361
 GameObject:
@@ -8470,7 +8471,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6244718018308410418}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
