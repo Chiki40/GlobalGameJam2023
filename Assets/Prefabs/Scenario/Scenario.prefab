@@ -3861,7 +3861,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: c470d447f23e20347bd6fa50f04875dc, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 14305ffcd36d0bc4f983f2216eafc656, type: 2}
+      objectReference: {fileID: 2100000, guid: 30cdae417c0aced4da2b103fcf178ae6, type: 2}
     - target: {fileID: 919132149155446097, guid: c470d447f23e20347bd6fa50f04875dc, type: 3}
       propertyPath: m_Name
       value: Cuadro_familia
@@ -4436,7 +4436,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 08bcc9fc7e0f36b49b6328e9b0a92581, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 14305ffcd36d0bc4f983f2216eafc656, type: 2}
+      objectReference: {fileID: 2100000, guid: 30cdae417c0aced4da2b103fcf178ae6, type: 2}
     - target: {fileID: 919132149155446097, guid: 08bcc9fc7e0f36b49b6328e9b0a92581, type: 3}
       propertyPath: m_Name
       value: Arbol_Cuadro
