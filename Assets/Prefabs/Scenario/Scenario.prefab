@@ -4160,6 +4160,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 08bcc9fc7e0f36b49b6328e9b0a92581, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 14305ffcd36d0bc4f983f2216eafc656, type: 2}
     - target: {fileID: 919132149155446097, guid: 08bcc9fc7e0f36b49b6328e9b0a92581, type: 3}
       propertyPath: m_Name
       value: Arbol_Cuadro
@@ -4217,10 +4221,47 @@ MonoBehaviour:
         m_CallState: 2
   _onMouseEnter:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1691114326}
+        m_TargetAssemblyTypeName: Outline, Assembly-CSharp
+        m_MethodName: outline
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   _onMouseExit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1691114326}
+        m_TargetAssemblyTypeName: Outline, Assembly-CSharp
+        m_MethodName: outline
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1691114326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3501580164751381827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d095d062b074bb42b04c76d24a468da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  matIndex: 0
 --- !u!4 &4311013805090869241 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 08bcc9fc7e0f36b49b6328e9b0a92581, type: 3}

@@ -17,6 +17,7 @@ public class SpriteHover : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         normal = spriteRenderer.sprite;
+        spriteRenderer.sprite = hover;
     }
 
     private void OnMouseEnter()
