@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
 {
 	private enum EGameState { PHOTO = 0, CHARACTER = 1, TREE = 2};
 
+	[SerializeField]
+	public GameObject fotoLight;
+
 	[System.Serializable]
 	public struct LevelData
 	{
@@ -169,6 +172,7 @@ public class GameManager : MonoBehaviour
 			_gameState = EGameState.PHOTO;
 			_mainPhotoCollider.enabled = false;
 			_characterMonologueGameObject.SetActive(false);
+			fotoLight.SetActive(true);
 			StartCoroutine(HideCharacterCoroutine());
 		}
 	}
@@ -199,6 +203,7 @@ public class GameManager : MonoBehaviour
 			_dialogue.text = TextsManager.Instance.GetDialogueText(charInfo.CharacterDialogueKey);
 			_character.gameObject.SetActive(true);
 			_treeCanvas.gameObject.SetActive(false);
+			fotoLight.SetActive(false);
 			EnablePhotoColliders(false);
 			StartCoroutine(SwitchToCharacterCameraCoroutine());
 		}

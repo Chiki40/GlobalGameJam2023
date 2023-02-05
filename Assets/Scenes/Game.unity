@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1992923934}
-  m_IndirectSpecularColor: {r: 0.14046618, g: 0.1492694, b: 0.20175168, a: 1}
+  m_IndirectSpecularColor: {r: 0.140605, g: 0.1494039, b: 0.2016842, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -397,7 +397,37 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 467377844434937173, guid: 90fdebcd43787de499884d939bf36167, type: 3}
   m_PrefabInstance: {fileID: 1613097073}
   m_PrefabAsset: {fileID: 0}
---- !u!43 &971821264
+--- !u!1 &976824735 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 467377843496052601, guid: 90fdebcd43787de499884d939bf36167, type: 3}
+  m_PrefabInstance: {fileID: 1613097073}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1053136969 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 467377844683359250, guid: 90fdebcd43787de499884d939bf36167, type: 3}
+  m_PrefabInstance: {fileID: 1613097073}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1093529180 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 467377843132222135, guid: 90fdebcd43787de499884d939bf36167, type: 3}
+  m_PrefabInstance: {fileID: 1613097073}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1168522572 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 467377843201867368, guid: 90fdebcd43787de499884d939bf36167, type: 3}
+  m_PrefabInstance: {fileID: 1613097073}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1185419549 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 543450653053197955, guid: 90fdebcd43787de499884d939bf36167, type: 3}
+  m_PrefabInstance: {fileID: 1613097073}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1208087916 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 467377844251557890, guid: 90fdebcd43787de499884d939bf36167, type: 3}
+  m_PrefabInstance: {fileID: 1613097073}
+  m_PrefabAsset: {fileID: 0}
+--- !u!43 &1224222844
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -561,36 +591,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1 &976824735 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 467377843496052601, guid: 90fdebcd43787de499884d939bf36167, type: 3}
-  m_PrefabInstance: {fileID: 1613097073}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1053136969 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 467377844683359250, guid: 90fdebcd43787de499884d939bf36167, type: 3}
-  m_PrefabInstance: {fileID: 1613097073}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1093529180 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 467377843132222135, guid: 90fdebcd43787de499884d939bf36167, type: 3}
-  m_PrefabInstance: {fileID: 1613097073}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1168522572 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 467377843201867368, guid: 90fdebcd43787de499884d939bf36167, type: 3}
-  m_PrefabInstance: {fileID: 1613097073}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1185419549 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 543450653053197955, guid: 90fdebcd43787de499884d939bf36167, type: 3}
-  m_PrefabInstance: {fileID: 1613097073}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1208087916 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 467377844251557890, guid: 90fdebcd43787de499884d939bf36167, type: 3}
-  m_PrefabInstance: {fileID: 1613097073}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1253367152 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 467377843468494733, guid: 90fdebcd43787de499884d939bf36167, type: 3}
@@ -820,14 +820,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 24268579, guid: 90fdebcd43787de499884d939bf36167, type: 3}
-      propertyPath: _onMouseEnter.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 24268579, guid: 90fdebcd43787de499884d939bf36167, type: 3}
-      propertyPath: _onMouseEnter.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 24268579, guid: 90fdebcd43787de499884d939bf36167, type: 3}
       propertyPath: _onMouseDown.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 232072875}
@@ -835,26 +827,6 @@ PrefabInstance:
       propertyPath: _onMouseEnter.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 232072875}
-    - target: {fileID: 24268579, guid: 90fdebcd43787de499884d939bf36167, type: 3}
-      propertyPath: _onMouseEnter.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 24268579, guid: 90fdebcd43787de499884d939bf36167, type: 3}
-      propertyPath: _onMouseEnter.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: PlayHoverSFX
-      objectReference: {fileID: 0}
-    - target: {fileID: 24268579, guid: 90fdebcd43787de499884d939bf36167, type: 3}
-      propertyPath: _onMouseEnter.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: GameManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 24268579, guid: 90fdebcd43787de499884d939bf36167, type: 3}
-      propertyPath: _onMouseEnter.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 24268579, guid: 90fdebcd43787de499884d939bf36167, type: 3}
-      propertyPath: _onMouseEnter.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 467377842976334710, guid: 90fdebcd43787de499884d939bf36167, type: 3}
       propertyPath: _onMouseDown.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -876,10 +848,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 232072875}
     - target: {fileID: 467377843383773474, guid: 90fdebcd43787de499884d939bf36167, type: 3}
-      propertyPath: _onMouseDown.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 232072875}
-    - target: {fileID: 467377843468494739, guid: 90fdebcd43787de499884d939bf36167, type: 3}
       propertyPath: _onMouseDown.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 232072875}
@@ -1018,15 +986,7 @@ PrefabInstance:
     - target: {fileID: 4348635876271780749, guid: 90fdebcd43787de499884d939bf36167, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 971821264}
-    - target: {fileID: 5932235913969600087, guid: 90fdebcd43787de499884d939bf36167, type: 3}
-      propertyPath: _onMouseEnter.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5932235913969600087, guid: 90fdebcd43787de499884d939bf36167, type: 3}
-      propertyPath: _onMouseEnter.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1224222844}
     - target: {fileID: 5932235913969600087, guid: 90fdebcd43787de499884d939bf36167, type: 3}
       propertyPath: _onMouseDown.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1035,31 +995,16 @@ PrefabInstance:
       propertyPath: _onMouseEnter.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 232072875}
-    - target: {fileID: 5932235913969600087, guid: 90fdebcd43787de499884d939bf36167, type: 3}
-      propertyPath: _onMouseEnter.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5932235913969600087, guid: 90fdebcd43787de499884d939bf36167, type: 3}
-      propertyPath: _onMouseEnter.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: PlayHoverSFX
-      objectReference: {fileID: 0}
-    - target: {fileID: 5932235913969600087, guid: 90fdebcd43787de499884d939bf36167, type: 3}
-      propertyPath: _onMouseEnter.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: GameManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 5932235913969600087, guid: 90fdebcd43787de499884d939bf36167, type: 3}
-      propertyPath: _onMouseEnter.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5932235913969600087, guid: 90fdebcd43787de499884d939bf36167, type: 3}
-      propertyPath: _onMouseEnter.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90fdebcd43787de499884d939bf36167, type: 3}
 --- !u!1 &1642528492 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 467377844607288619, guid: 90fdebcd43787de499884d939bf36167, type: 3}
+  m_PrefabInstance: {fileID: 1613097073}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1679671093 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1679671093, guid: 90fdebcd43787de499884d939bf36167, type: 3}
   m_PrefabInstance: {fileID: 1613097073}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1724666654 stripped
@@ -1119,6 +1064,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1337911749, guid: 9686ee9caf357e946a47b82f0cf1fa47, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 870201769741948091, guid: 9686ee9caf357e946a47b82f0cf1fa47, type: 3}
       propertyPath: m_SizeDelta.x
       value: -1919.9999
@@ -1199,6 +1148,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8045935839864964875, guid: 9686ee9caf357e946a47b82f0cf1fa47, type: 3}
+      propertyPath: fotoLight
+      value: 
+      objectReference: {fileID: 1679671093}
     - target: {fileID: 8045935839864964875, guid: 9686ee9caf357e946a47b82f0cf1fa47, type: 3}
       propertyPath: _mainPhotoCollider
       value: 
