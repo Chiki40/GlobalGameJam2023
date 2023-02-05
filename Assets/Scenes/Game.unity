@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1992923934}
-  m_IndirectSpecularColor: {r: 0.140605, g: 0.1494039, b: 0.2016842, a: 1}
+  m_IndirectSpecularColor: {r: 0.14046618, g: 0.1492694, b: 0.20175168, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -387,7 +387,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 467377843354175551, guid: 90fdebcd43787de499884d939bf36167, type: 3}
   m_PrefabInstance: {fileID: 1613097073}
   m_PrefabAsset: {fileID: 0}
---- !u!43 &897488865
+--- !u!1 &911067091 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 467377844022323729, guid: 90fdebcd43787de499884d939bf36167, type: 3}
+  m_PrefabInstance: {fileID: 1613097073}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &947589764 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 467377844434937173, guid: 90fdebcd43787de499884d939bf36167, type: 3}
+  m_PrefabInstance: {fileID: 1613097073}
+  m_PrefabAsset: {fileID: 0}
+--- !u!43 &971821264
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -551,16 +561,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1 &911067091 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 467377844022323729, guid: 90fdebcd43787de499884d939bf36167, type: 3}
-  m_PrefabInstance: {fileID: 1613097073}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &947589764 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 467377844434937173, guid: 90fdebcd43787de499884d939bf36167, type: 3}
-  m_PrefabInstance: {fileID: 1613097073}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &976824735 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 467377843496052601, guid: 90fdebcd43787de499884d939bf36167, type: 3}
@@ -820,9 +820,41 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 24268579, guid: 90fdebcd43787de499884d939bf36167, type: 3}
+      propertyPath: _onMouseEnter.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 24268579, guid: 90fdebcd43787de499884d939bf36167, type: 3}
+      propertyPath: _onMouseEnter.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 24268579, guid: 90fdebcd43787de499884d939bf36167, type: 3}
       propertyPath: _onMouseDown.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 232072875}
+    - target: {fileID: 24268579, guid: 90fdebcd43787de499884d939bf36167, type: 3}
+      propertyPath: _onMouseEnter.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 232072875}
+    - target: {fileID: 24268579, guid: 90fdebcd43787de499884d939bf36167, type: 3}
+      propertyPath: _onMouseEnter.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 24268579, guid: 90fdebcd43787de499884d939bf36167, type: 3}
+      propertyPath: _onMouseEnter.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayHoverSFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 24268579, guid: 90fdebcd43787de499884d939bf36167, type: 3}
+      propertyPath: _onMouseEnter.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 24268579, guid: 90fdebcd43787de499884d939bf36167, type: 3}
+      propertyPath: _onMouseEnter.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 24268579, guid: 90fdebcd43787de499884d939bf36167, type: 3}
+      propertyPath: _onMouseEnter.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 467377842976334710, guid: 90fdebcd43787de499884d939bf36167, type: 3}
       propertyPath: _onMouseDown.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -986,11 +1018,43 @@ PrefabInstance:
     - target: {fileID: 4348635876271780749, guid: 90fdebcd43787de499884d939bf36167, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 897488865}
+      objectReference: {fileID: 971821264}
+    - target: {fileID: 5932235913969600087, guid: 90fdebcd43787de499884d939bf36167, type: 3}
+      propertyPath: _onMouseEnter.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5932235913969600087, guid: 90fdebcd43787de499884d939bf36167, type: 3}
+      propertyPath: _onMouseEnter.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5932235913969600087, guid: 90fdebcd43787de499884d939bf36167, type: 3}
       propertyPath: _onMouseDown.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 232072875}
+    - target: {fileID: 5932235913969600087, guid: 90fdebcd43787de499884d939bf36167, type: 3}
+      propertyPath: _onMouseEnter.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 232072875}
+    - target: {fileID: 5932235913969600087, guid: 90fdebcd43787de499884d939bf36167, type: 3}
+      propertyPath: _onMouseEnter.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5932235913969600087, guid: 90fdebcd43787de499884d939bf36167, type: 3}
+      propertyPath: _onMouseEnter.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayHoverSFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 5932235913969600087, guid: 90fdebcd43787de499884d939bf36167, type: 3}
+      propertyPath: _onMouseEnter.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5932235913969600087, guid: 90fdebcd43787de499884d939bf36167, type: 3}
+      propertyPath: _onMouseEnter.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5932235913969600087, guid: 90fdebcd43787de499884d939bf36167, type: 3}
+      propertyPath: _onMouseEnter.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90fdebcd43787de499884d939bf36167, type: 3}
 --- !u!1 &1642528492 stripped
