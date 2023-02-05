@@ -212,7 +212,7 @@ public class GameManager : MonoBehaviour
     internal bool CheckCurrentLevel(int numCorrect)
     {
 		int correctNeeded = 0;
-        for (int i = 0; i < currentLevel; ++i)
+        for (int i = 0; i <= currentLevel; ++i)
 		{
 			correctNeeded += levels[i].arbolImagesToUnlock.Count;
 		}
@@ -257,7 +257,7 @@ public class GameManager : MonoBehaviour
 	{
 		FinishLevel(levels[currentLevel]);
 		++currentLevel;
-		if (currentLevel > levels.Count)
+		if (currentLevel >= levels.Count)
 		{
 			OnGameEnd();
 		}
@@ -279,22 +279,12 @@ public class GameManager : MonoBehaviour
 			imageToUnlock.SetActive(false);
 		}
 
-		levelData.background.enabled = false;
+		//levelData.background.enabled = false;
 		
 	}
 
 	private void PrepareLevel(LevelData levelData)
 	{
-		foreach (GameObject imageToUnlock in levelData.arbolImagesToUnlock)
-		{
-			imageToUnlock.SetActive(true);
-		}
-
-		foreach (GameObject imageToUnlock in levelData.scrollImagesToUnlock)
-		{
-			imageToUnlock.SetActive(true);
-		}
-
 		foreach (GameObject gameObjectToShow in levelData.fotoCharactersToShow)
 		{
 			gameObjectToShow.SetActive(true);
@@ -306,14 +296,28 @@ public class GameManager : MonoBehaviour
 			color.a = 0;
 			levelData.background.enabled = true;
 			float totalTime = 0;
-			while (totalTime < 2)
+			float time = 2.0f;
+			while (totalTime < time)
 			{
-				color.a += totalTime / 2;
+				totalTime += Time.deltaTime;
+				color.a = totalTime / time;
 				background.color = color;
 				yield return null;
 			}
 			color.a = 1;
 			background.color = color;
+
+
+			// Active objects
+			foreach (GameObject imageToUnlock in levelData.arbolImagesToUnlock)
+			{
+				imageToUnlock.SetActive(true);
+			}
+
+			foreach (GameObject imageToUnlock in levelData.scrollImagesToUnlock)
+			{
+				imageToUnlock.SetActive(true);
+			}
 		}
 		StartCoroutine(ShowBackground(levelData.background));
 		
