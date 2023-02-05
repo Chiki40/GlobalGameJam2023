@@ -65,7 +65,7 @@ public class Victory : MonoBehaviour
             yield return null;
         }
 
-        yield return new WaitForSeconds(8.0f);
+        yield return new WaitForSeconds(30.0f);
 
         SceneManager.LoadScene("MainMenu");
     }
