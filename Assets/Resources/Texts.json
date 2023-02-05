@@ -1,7 +1,7 @@
 {
     "dialogues": {
         "R_Ruth": "Sí, pasa. \nSiéntate. \nCreo que en esta familia el único ser sin maldad es ese bebé, el adoptado, ¡y ni siquiera me lo han presentado aún! \nEs una pena que a él no vaya a ir la herencia por tener el padre tan repelente que tiene... ¡Con el marido tan apuesto que se echó!",
-        "A_Amapola": "¿Papá?¿Papi?¿Ande ta papi?",
+        "A_Amapola": "Mi hermana la verdad es que era un mujer muy peculiar. Sin <<su Armando>> nada tenía sentido para ella. Pues que se hubiera quitado del medio y habría sufrido menos, la verdad. Lo bien que me habría venido a mí  heredar más joven y no andarnos ahora con que fulanita se fue con fulanito y nunca nadie se lo dijo... \nVaya pérdida de tiempo para mí y sobre todo para los míos.",
         "1_Daniel": "",
         "A1_Juan": "",
         "10_Montse": "",
@@ -17,10 +17,10 @@
         "12_Jacobo": "",
         "B21_Beltran": "",
         "B22_Leonor": "",
-        "B23_Francisco": "",
+        "B23_Francisco": "Para un día que no tengo que ir al cole y resulta que es para venir a la casa de la tía Ruth a aburrirme. Todo huele raro. Esa señora olía raro y me da igual que se haya muerto, ahora seguro que huele hasta peor. \nAl menos está el yayo Bruno que me cuenta cosas de cuando estuvo en la guerra. \nMe encantaría que me dejala una de sus pistolas un día para disparar a esas gaviotas que están ahí fuera. Seguro que no dejo ninguna.",
         "B3_Jaime": "Así que en esta familia también había secretitos escondidos ¿eh? . Vaya, vaya. Y luego me decían a mí que era el que las mataba callando. Uy, perdón, un comentario un poco inapropiado para hoy. \nAcabemos con esto cuanto antes: Yo estoy convencido de que si hay alguien que no encaja en esta familia soy yo. Además, ¡yo quería mucho a mi tita Ruth! Ella siempre tan.... Y tan... Sí, ya me entiende usted.",
         "13_Yerai": "Desde que Bea tuvo a los mellizos, yo estaba OBSESIONADO con tener hijitos con mi Jimmy. Y ahora tenemos a Sol y, ains, madre mía. es que nos ha iluminado la vida...¿La tía Ruth? Ah, esa señora... Sí, es una lástima. ¿Era muy mayorcilla, no? Jimi no hablaba mucho de ella. Él siempre está con los bigotes sumergidos en libros y es de pocas palabras. ",
-        "B31_Sol": "",
+        "B31_Sol": "¿Papá?¿Papi?¿Ande ta papi?",
         "B0_Eloisa": "",
         "0_Asier": "",
         "B01_Victor": "",
