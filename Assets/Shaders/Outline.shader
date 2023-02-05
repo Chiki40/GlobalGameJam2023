@@ -43,6 +43,7 @@ Shader "Unlit/OutlineShader"
                 float2 uv : TEXCOORD0;
                 UNITY_FOG_COORDS(1)
                 float4 vertex : SV_POSITION;
+                fixed4 diff : COLOR0; // diffuse lighting color
             };
 
             sampler2D _MainTex;
@@ -55,6 +56,13 @@ Shader "Unlit/OutlineShader"
                 o.vertex = UnityObjectToClipPos(v.vertex);
                 o.uv = TRANSFORM_TEX(v.uv, _MainTex);
                 UNITY_TRANSFER_FOG(o,o.vertex);
+                // get vertex normal in world space
+                half3 worldNormal = UnityObjectToWorldNormal(v.normal);
+                // dot product between normal and light direction for
+                // standard diffuse (Lambert) lighting
+                half nl = max(0, dot(worldNormal, _WorldSpaceLightPos0.xyz));
+                // factor in the light color
+                o.diff = nl /** _LightColor0*/;
                 return o;
             }
 
@@ -89,6 +97,7 @@ Shader "Unlit/OutlineShader"
                     float2 uv : TEXCOORD0;
                     UNITY_FOG_COORDS(1)
                     float4 vertex : SV_POSITION;
+                    fixed4 diff : COLOR0; // diffuse lighting color
                 };
 
                 sampler2D _MainTex;
@@ -100,6 +109,14 @@ Shader "Unlit/OutlineShader"
                     o.vertex = UnityObjectToClipPos(v.vertex);
                     o.uv = TRANSFORM_TEX(v.uv, _MainTex);
                     UNITY_TRANSFER_FOG(o,o.vertex);
+
+                    // get vertex normal in world space
+                    half3 worldNormal = UnityObjectToWorldNormal(v.normal);
+                    // dot product between normal and light direction for
+                    // standard diffuse (Lambert) lighting
+                    half nl = max(0, dot(worldNormal, _WorldSpaceLightPos0.xyz));
+                    // factor in the light color
+                    o.diff = nl /** _LightColor0*/;
                     return o;
                 }
 
@@ -108,8 +125,10 @@ Shader "Unlit/OutlineShader"
                     // sample the texture
                     fixed4 col = tex2D(_MainTex, i.uv);
                 // apply fog
-                UNITY_APPLY_FOG(i.fogCoord, col);
-                col.rgb += _TintColor;
+                //UNITY_APPLY_FOG(i.fogCoord, col);
+                // apply light
+                col.rgb *= i.diff;
+                //col.rgb += _TintColor;
                 //col.a = _alpha;
                 return col;
             }
