@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: A22_Lucia
   m_EditorClassIdentifier: 
   CharacterSprite: {fileID: -940403297, guid: a8056c216f049474285f1dec73871a15, type: 3}
-  CharacterDialogueKey: R_Ruth
+  CharacterDialogueKey: A22_Lucia

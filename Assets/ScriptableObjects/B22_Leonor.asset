@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: B22_Leonor
   m_EditorClassIdentifier: 
   CharacterSprite: {fileID: 1616457177, guid: a8056c216f049474285f1dec73871a15, type: 3}
-  CharacterDialogueKey: R_Ruth
+  CharacterDialogueKey: B22_Leonor

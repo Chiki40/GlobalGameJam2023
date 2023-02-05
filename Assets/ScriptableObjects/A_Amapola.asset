@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: A_Amapola
   m_EditorClassIdentifier: 
   CharacterSprite: {fileID: -2115886856, guid: a8056c216f049474285f1dec73871a15, type: 3}
-  CharacterDialogueKey: R_Ruth
+  CharacterDialogueKey: A_Amapola

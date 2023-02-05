@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: C_Carlota
   m_EditorClassIdentifier: 
   CharacterSprite: {fileID: -1354629916, guid: a8056c216f049474285f1dec73871a15, type: 3}
-  CharacterDialogueKey: R_Ruth
+  CharacterDialogueKey: C_Carlota

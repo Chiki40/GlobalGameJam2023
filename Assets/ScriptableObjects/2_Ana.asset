@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: 2_Ana
   m_EditorClassIdentifier: 
   CharacterSprite: {fileID: -2117984045, guid: a8056c216f049474285f1dec73871a15, type: 3}
-  CharacterDialogueKey: R_Ruth
+  CharacterDialogueKey: 2_Ana

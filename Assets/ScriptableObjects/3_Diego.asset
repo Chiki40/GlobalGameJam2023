@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: 3_Diego
   m_EditorClassIdentifier: 
   CharacterSprite: {fileID: 1450075101, guid: a8056c216f049474285f1dec73871a15, type: 3}
-  CharacterDialogueKey: R_Ruth
+  CharacterDialogueKey: 3_Diego
