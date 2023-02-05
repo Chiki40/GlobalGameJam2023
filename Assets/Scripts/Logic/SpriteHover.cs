@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SpriteHover : MonoBehaviour
@@ -12,6 +10,9 @@ public class SpriteHover : MonoBehaviour
 
     SpriteRenderer spriteRenderer;
 
+    private const int kFramesCooldownForAudio = 8;
+    private static int Frame = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +24,11 @@ public class SpriteHover : MonoBehaviour
     private void OnMouseEnter()
     {
         spriteRenderer.sprite = normal;
+        if (Time.frameCount > Frame + kFramesCooldownForAudio)
+        {
+            UtilSound.Instance.PlaySound("Hover");
+            Frame = Time.frameCount;
+        }
     }
 
     private void OnMouseExit()

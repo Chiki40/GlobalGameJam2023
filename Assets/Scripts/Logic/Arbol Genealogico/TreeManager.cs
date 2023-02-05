@@ -34,6 +34,7 @@ public class TreeManager : MonoBehaviour
         {
             _caraSelection.AddCara(_selectedGO.GetComponent<CaraID>().ID);//add to selection
         }
+        UtilSound.Instance.PlaySound("SelectTreeAvatar");
         _selectedGO = go;
     }
 
@@ -42,7 +43,7 @@ public class TreeManager : MonoBehaviour
         CaraID caraId = go.GetComponent<CaraID>();
         if (caraId != null)
         {
-            RemoveCaraFromTree(go);
+            RemoveCaraFromTree(go, playAudio:_selectedGO == null);
             if (_selectedGO != null)
 			{
                 InsertCaraOnTree(go);
@@ -58,6 +59,7 @@ public class TreeManager : MonoBehaviour
     {
         if(_selectedGO != null)
         {
+            UtilSound.Instance.PlaySound("PlaceTreeAvatar");
             CaraID selectedID = _selectedGO.GetComponent<CaraID>();
             _caraSelection.RemoveCara(selectedID.ID);//remove from selection
             CaraID cara = go.AddComponent<CaraID>();
@@ -68,13 +70,17 @@ public class TreeManager : MonoBehaviour
         }
     }
 
-    private void RemoveCaraFromTree(GameObject go)
+    private void RemoveCaraFromTree(GameObject go, bool playAudio=false)
     {
-        RemoveCaraFromTree(go.GetComponent<CaraID>().ID, go);
+        RemoveCaraFromTree(go.GetComponent<CaraID>().ID, go, playAudio);
     }
 
-    private void RemoveCaraFromTree(string id, GameObject go)
+    private void RemoveCaraFromTree(string id, GameObject go, bool playAudio=false)
     {
+        if (playAudio)
+		{
+            UtilSound.Instance.PlaySound("DeleteTreeAvatar");
+		}
         _caraSelection.AddCara(id);//add to selection
         ResetCaraOnTree(go);
     }

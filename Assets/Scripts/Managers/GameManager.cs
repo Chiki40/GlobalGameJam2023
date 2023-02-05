@@ -62,6 +62,12 @@ public class GameManager : MonoBehaviour
 	private void Start()
 	{
 		_cachedPhotoColliders = _photoCollidersParents.GetComponentsInChildren<BoxCollider2D>();
+		UtilSound.Instance.PlaySound("ambience", loop: true);
+	}
+
+	private void OnDestroy()
+	{
+		UtilSound.Instance.StopAllSounds();
 	}
 
 	private void Update()
@@ -130,6 +136,10 @@ public class GameManager : MonoBehaviour
 
 		if (_gamePlaying && (_gameState == EGameState.CHARACTER || force))
 		{
+			if (!force)
+			{
+				UtilSound.Instance.PlaySound("EnterPhoto");
+			}
 			_controlsBlocked = true;
 			CommonManagers.Instance.GoToGameFromGameCharacter();
 			_gameState = EGameState.PHOTO;
@@ -158,6 +168,7 @@ public class GameManager : MonoBehaviour
 
 		if (_gamePlaying && (_gameState == EGameState.PHOTO || _gameState == EGameState.TREE))
 		{
+			UtilSound.Instance.PlaySound("SelectPhoto");
 			_controlsBlocked = true;
 			CommonManagers.Instance.GoToCharacterFromGame();
 			_character.sprite = charInfo.CharacterSprite;
@@ -187,6 +198,7 @@ public class GameManager : MonoBehaviour
 
 		if (_gamePlaying && _gameState == EGameState.CHARACTER)
 		{
+			UtilSound.Instance.PlaySound("EnterTree");
 			_controlsBlocked = true;
 			CommonManagers.Instance.GoToArbolFromCharacter();
 			_mainPhotoCollider.enabled = false;
