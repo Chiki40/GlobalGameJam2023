@@ -297,17 +297,18 @@ public class GameManager : MonoBehaviour
 
 		IEnumerator ShowBackground(Image background)
 		{
-			//Color color = background.color;
-			//color.a = 0;
-			yield return null;
+			Color color = background.color;
+			color.a = 0;
 			levelData.background.enabled = true;
-			//float totalTime = 0;
-			//while (totalTime < 2)
-			//{
-			//	color.a = 
-			//	background.color = color.a
-			//}
-			//background.color = 
+			float totalTime = 0;
+			while (totalTime < 2)
+			{
+				color.a += totalTime / 2;
+				background.color = color;
+				yield return null;
+			}
+			color.a = 1;
+			background.color = color;
 		}
 		StartCoroutine(ShowBackground(levelData.background));
 		
