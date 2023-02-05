@@ -11,6 +11,8 @@ public class TreeManager : MonoBehaviour
     private CaraSelection _caraSelection;
     [SerializeField]
     private Color _freeSpriteColor = Color.white;
+    [SerializeField]
+    Sprite unknownImage;
 
     [SerializeField]
     private int _timesSetCara = 3;
@@ -95,7 +97,7 @@ public class TreeManager : MonoBehaviour
     private void ResetCaraOnTree(GameObject go)
     {
         Image img = go.GetComponent<Image>();
-        img.sprite = null;
+        img.sprite = unknownImage;
         img.color = _freeSpriteColor;
         CaraID caraID = go.GetComponent<CaraID>();
         if (caraID != null)
