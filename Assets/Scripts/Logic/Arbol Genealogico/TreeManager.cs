@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class TreeManager : MonoBehaviour
@@ -119,15 +120,10 @@ public class TreeManager : MonoBehaviour
                 _carasCorrect.Add(cara.gameObject);
             }
         }
-
       
-        if(numCorrect % _timesSetCara == 0)
+        if(numCorrect == allElements.Length)
         {
-            for(int i = 0; i < _carasCorrect.Count; ++i)
-            {
-                _carasCorrect[i].GetComponent<Button>().enabled = false;
-                Debug.Log("hacer algo para marcarlos como bien!!!!!");
-            }
+            SceneManager.LoadScene("Victory");
         }
 
     }
