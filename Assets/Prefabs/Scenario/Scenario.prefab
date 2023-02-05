@@ -572,7 +572,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 467377844828892340, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
       propertyPath: m_Name
-      value: PersonajeFoto (16)
+      value: Leonor (B22)
       objectReference: {fileID: 0}
     - target: {fileID: 467377844828892340, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
       propertyPath: m_IsActive
@@ -673,7 +673,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 467377844828892340, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
       propertyPath: m_Name
-      value: PersonajeFoto (2)
+      value: Daniel (1)
       objectReference: {fileID: 0}
     - target: {fileID: 467377844828892340, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
       propertyPath: m_IsActive
@@ -778,7 +778,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 467377844828892340, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
       propertyPath: m_Name
-      value: PersonajeFoto (15)
+      value: Beltran (B21)
       objectReference: {fileID: 0}
     - target: {fileID: 467377844828892340, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
       propertyPath: m_IsActive
@@ -887,7 +887,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 467377844828892340, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
       propertyPath: m_Name
-      value: PersonajeFoto (26)
+      value: Diego (3)
       objectReference: {fileID: 0}
     - target: {fileID: 467377844828892340, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
       propertyPath: m_IsActive
@@ -1000,7 +1000,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 467377844828892340, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
       propertyPath: m_Name
-      value: PersonajeFoto (11)
+      value: Ana (2)
       objectReference: {fileID: 0}
     - target: {fileID: 467377844828892340, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
       propertyPath: m_IsActive
@@ -1109,7 +1109,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 467377844828892340, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
       propertyPath: m_Name
-      value: PersonajeFoto (24)
+      value: Laura (B02)
       objectReference: {fileID: 0}
     - target: {fileID: 467377844828892340, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
       propertyPath: m_IsActive
@@ -1210,7 +1210,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 467377844828892340, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
       propertyPath: m_Name
-      value: PersonajeFoto (17)
+      value: Francisco (B23)
       objectReference: {fileID: 0}
     - target: {fileID: 467377844828892340, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
       propertyPath: m_IsActive
@@ -1319,7 +1319,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 467377844828892340, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
       propertyPath: m_Name
-      value: PersonajeFoto (5)
+      value: Pau (A11)
       objectReference: {fileID: 0}
     - target: {fileID: 467377844828892340, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
       propertyPath: m_IsActive
@@ -1428,7 +1428,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 467377844828892340, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
       propertyPath: m_Name
-      value: PersonajeFoto (13)
+      value: Inmaculada (B2)
       objectReference: {fileID: 0}
     - target: {fileID: 467377844828892340, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
       propertyPath: m_IsActive
@@ -1537,7 +1537,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 467377844828892340, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
       propertyPath: m_Name
-      value: PersonajeFoto (6)
+      value: Emma (A2)
       objectReference: {fileID: 0}
     - target: {fileID: 467377844828892340, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
       propertyPath: m_IsActive
@@ -1646,7 +1646,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 467377844828892340, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
       propertyPath: m_Name
-      value: PersonajeFoto (23)
+      value: "V\xEDctor (B01)"
       objectReference: {fileID: 0}
     - target: {fileID: 467377844828892340, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
       propertyPath: m_IsActive
@@ -1833,7 +1833,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 467377844828892340, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
       propertyPath: m_Name
-      value: PersonajeFoto (14)
+      value: Jacobo (12)
       objectReference: {fileID: 0}
     - target: {fileID: 467377844828892340, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
       propertyPath: m_IsActive
@@ -1946,7 +1946,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 467377844828892340, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
       propertyPath: m_Name
-      value: PersonajeFoto (7)
+      value: Beatriz (11)
       objectReference: {fileID: 0}
     - target: {fileID: 467377844828892340, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
       propertyPath: m_IsActive
@@ -2059,7 +2059,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 467377844828892340, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
       propertyPath: m_Name
-      value: PersonajeFoto (9)
+      value: "Luc\xEDa (A22)"
       objectReference: {fileID: 0}
     - target: {fileID: 467377844828892340, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
       propertyPath: m_IsActive
@@ -2164,7 +2164,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 467377844828892340, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
       propertyPath: m_Name
-      value: PersonajeFoto (4)
+      value: Motse (10)
       objectReference: {fileID: 0}
     - target: {fileID: 467377844828892340, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
       propertyPath: m_IsActive
@@ -2281,7 +2281,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 467377844828892340, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
       propertyPath: m_Name
-      value: PersonajeFoto (3)
+      value: Juan (A1)
       objectReference: {fileID: 0}
     - target: {fileID: 467377844828892340, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
       propertyPath: m_IsActive
@@ -2382,7 +2382,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 467377844828892340, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
       propertyPath: m_Name
-      value: PersonajeFoto (10)
+      value: Bruno (B)
       objectReference: {fileID: 0}
     - target: {fileID: 467377844828892340, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
       propertyPath: m_IsActive
@@ -2495,7 +2495,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 467377844828892340, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
       propertyPath: m_Name
-      value: PersonajeFoto (22)
+      value: Asier (0)
       objectReference: {fileID: 0}
     - target: {fileID: 467377844828892340, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
       propertyPath: m_IsActive
@@ -2604,7 +2604,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 467377844828892340, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
       propertyPath: m_Name
-      value: PersonajeFoto (20)
+      value: Sol (B31)
       objectReference: {fileID: 0}
     - target: {fileID: 467377844828892340, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
       propertyPath: m_IsActive
@@ -2709,7 +2709,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 467377844828892340, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
       propertyPath: m_Name
-      value: PersonajeFoto (27)
+      value: Marina (C1)
       objectReference: {fileID: 0}
     - target: {fileID: 467377844828892340, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
       propertyPath: m_IsActive
@@ -2814,7 +2814,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 467377844828892340, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
       propertyPath: m_Name
-      value: PersonajeFoto (12)
+      value: Manuel (B1)
       objectReference: {fileID: 0}
     - target: {fileID: 467377844828892340, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
       propertyPath: m_IsActive
@@ -2923,7 +2923,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 467377844828892340, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
       propertyPath: m_Name
-      value: PersonajeFoto (18)
+      value: Jaime (B3)
       objectReference: {fileID: 0}
     - target: {fileID: 467377844828892340, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
       propertyPath: m_IsActive
@@ -3032,7 +3032,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 467377844828892340, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
       propertyPath: m_Name
-      value: PersonajeFoto (21)
+      value: Eloisa (B0)
       objectReference: {fileID: 0}
     - target: {fileID: 467377844828892340, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
       propertyPath: m_IsActive
@@ -3141,7 +3141,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 467377844828892340, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
       propertyPath: m_Name
-      value: PersonajeFoto (8)
+      value: Alex (A21)
       objectReference: {fileID: 0}
     - target: {fileID: 467377844828892340, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
       propertyPath: m_IsActive
@@ -3242,7 +3242,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 467377844828892340, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
       propertyPath: m_Name
-      value: PersonajeFoto
+      value: Ruth
       objectReference: {fileID: 0}
     - target: {fileID: 467377844828892340, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
       propertyPath: m_IsActive
@@ -3351,7 +3351,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 467377844828892340, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
       propertyPath: m_Name
-      value: PersonajeFoto (1)
+      value: Amapola (A)
       objectReference: {fileID: 0}
     - target: {fileID: 467377844828892340, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
       propertyPath: m_IsActive
@@ -3464,7 +3464,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 467377844828892340, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
       propertyPath: m_Name
-      value: PersonajeFoto (25)
+      value: Carlota (C)
       objectReference: {fileID: 0}
     - target: {fileID: 467377844828892340, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
       propertyPath: m_IsActive
@@ -3569,7 +3569,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 467377844828892340, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
       propertyPath: m_Name
-      value: PersonajeFoto (19)
+      value: Yerai (13)
       objectReference: {fileID: 0}
     - target: {fileID: 467377844828892340, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
       propertyPath: m_IsActive

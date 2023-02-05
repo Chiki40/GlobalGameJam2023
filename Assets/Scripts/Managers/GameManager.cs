@@ -257,6 +257,7 @@ public class GameManager : MonoBehaviour
 		}
 
 		levelData.background.enabled = false;
+		
 	}
 
 	private void PrepareLevel(LevelData levelData)
