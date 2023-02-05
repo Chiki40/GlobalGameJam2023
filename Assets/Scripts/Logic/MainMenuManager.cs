@@ -9,6 +9,8 @@ public class MainMenuManager : MonoBehaviour
 	private CanvasGroup _canvasGroup = null;
 	[SerializeField]
 	private float _timeToFade = 2.0f;
+	[SerializeField]
+	private GameObject _exitButton = null;
 	private Button[] _buttons = null;
 
 	private bool _exitingMenuToGame = false;
@@ -25,6 +27,9 @@ public class MainMenuManager : MonoBehaviour
 			SceneManager.SetActiveScene(SceneManager.GetSceneByName("Game"));
 		}
 		_buttons = transform.GetComponentsInChildren<Button>();
+#if UNITY_ANDROID
+		_exitButton.SetActive(false);
+#endif
 	}
 
 	private void Update()
@@ -84,6 +89,7 @@ public class MainMenuManager : MonoBehaviour
 
 	public void OnStart()
 	{
+		UtilSound.Instance.PlaySound("UIClick");
 		EnableButtons(false);
 		_exitingMenuToGame = true;
 		_timeFading = 0.0f;
@@ -93,6 +99,7 @@ public class MainMenuManager : MonoBehaviour
 
 	public void OnCredits()
 	{
+		UtilSound.Instance.PlaySound("UIClick");
 		UtilSound.Instance.PlaySound("Sonido de comienzo");
 		EnableButtons(false);
 		_exitingMenuToCredits = true;
@@ -100,11 +107,17 @@ public class MainMenuManager : MonoBehaviour
 
 	public void OnExit()
 	{
+		IEnumerator OnExitCoroutine()
+		{
+			yield return new WaitForSeconds(0.5f);
 #if !UNITY_EDITOR
-		Application.Quit();
+			Application.Quit();
 #else
-		UnityEditor.EditorApplication.ExitPlaymode();
+			UnityEditor.EditorApplication.ExitPlaymode();
 #endif
+		}
+		UtilSound.Instance.PlaySound("UIClick");
 		EnableButtons(false);
+		StartCoroutine(OnExitCoroutine());
 	}
 }

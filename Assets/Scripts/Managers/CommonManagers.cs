@@ -130,6 +130,7 @@ public class CommonManagers : MonoBehaviour
 
 	public void OnFinishedGoToGameFromMainMenu()
 	{
+		UtilSound.Instance.StopSound("ambience", fadeTime:1.0f);
 		_gameCam.Priority = kHighPriorityCam;
 		_mainMenuCam.Priority = kLowPriorityCam;
 		SceneManager.UnloadSceneAsync("MainMenu");
@@ -157,6 +158,7 @@ public class CommonManagers : MonoBehaviour
 	{
 		IEnumerator GoToMainMenuFromGameCoroutine()
 		{
+			UtilSound.Instance.PlaySound("ambience", loop: true);
 			SceneManager.LoadScene("MainMenu", LoadSceneMode.Additive);
 			yield return null;
 			MainMenuManager menuManager = FindObjectOfType<MainMenuManager>();

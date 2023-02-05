@@ -48,6 +48,7 @@ public class CreditsManager : MonoBehaviour
 	}
 	public void OnExit()
 	{
+		UtilSound.Instance.PlaySound("UIClick");
 		EnableButtons(false);
 		_goingToMenu = true;
 		_timeFading = 0.0f;
