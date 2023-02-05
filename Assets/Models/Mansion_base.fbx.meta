@@ -12,8 +12,28 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: MAT_Brown
+    second: {fileID: 2100000, guid: 48b025c61f3fac04eb7498d5b9bf71a2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_Carpet
+    second: {fileID: 2100000, guid: 2e7905e9290893e43a095061e1eb4f22, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: MAT_Glass
     second: {fileID: 2100000, guid: 33da60f6c00071645a30f9e8c2d4eef7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_Wall
+    second: {fileID: 2100000, guid: c62ce5e9e9502d743825b0b1496bb885, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_White
+    second: {fileID: 2100000, guid: 071be7206495e5740acb314c9dce8f2d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 1
