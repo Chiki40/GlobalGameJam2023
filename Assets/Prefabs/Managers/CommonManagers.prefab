@@ -1233,7 +1233,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  - {fileID: 932552905300025948, guid: 57a62f41563ca7f48bf0a1a66f207f95, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1277,8 +1277,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Bea D\xEDaz Martin\n\nMarina Rey Y\xE9benes\n\nDiego Abalde Iglesias"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 57a62f41563ca7f48bf0a1a66f207f95, type: 2}
+  m_sharedMaterial: {fileID: 932552905300025948, guid: 57a62f41563ca7f48bf0a1a66f207f95, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1405,7 +1405,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  - {fileID: 932552905300025948, guid: 57a62f41563ca7f48bf0a1a66f207f95, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1450,8 +1450,8 @@ MonoBehaviour:
   m_text: "V\xEDctor Mart\xEDnez Sim\xF3n\n\nManuel Mora Cuesta\n\nDaniel Gonz\xE1lez
     Hern\xE1ndez"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 57a62f41563ca7f48bf0a1a66f207f95, type: 2}
+  m_sharedMaterial: {fileID: 932552905300025948, guid: 57a62f41563ca7f48bf0a1a66f207f95, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
