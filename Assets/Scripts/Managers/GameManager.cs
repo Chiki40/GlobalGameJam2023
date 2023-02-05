@@ -244,6 +244,7 @@ public class GameManager : MonoBehaviour
 
 	public void CloseDialogue()
 	{
+		UtilSound.Instance.PlaySound("UIClick");
 		_characterMonologueGameObject.SetActive(false);
 	}
 
