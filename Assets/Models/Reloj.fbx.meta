@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5d62bdbe896ae7c4fbc8f119aebde81d
+guid: 7808b1ad5215bab4196c34a7359563dc
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -17,23 +17,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: MAT_Brown_light
-    second: {fileID: 2100000, guid: e1a66a637dfc92646ae80ba33c5a979c, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: MAT_Carpet
-    second: {fileID: 2100000, guid: 2e7905e9290893e43a095061e1eb4f22, type: 2}
+      name: MAT_DORADO
+    second: {fileID: 2100000, guid: 30cdae417c0aced4da2b103fcf178ae6, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: MAT_Glass
     second: {fileID: 2100000, guid: 33da60f6c00071645a30f9e8c2d4eef7, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: MAT_Wall
-    second: {fileID: 2100000, guid: c62ce5e9e9502d743825b0b1496bb885, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
