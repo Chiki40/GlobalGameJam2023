@@ -26,7 +26,7 @@ public class SpriteHover : MonoBehaviour
         spriteRenderer.sprite = normal;
         if (Time.frameCount > Frame + kFramesCooldownForAudio)
         {
-            UtilSound.Instance.PlaySound("Hover");
+            UtilSound.Instance.PlaySound("Hover", volume:0.45f);
             Frame = Time.frameCount;
         }
     }

@@ -3315,6 +3315,10 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 467377844828892330, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
+      propertyPath: _onMouseDown.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 467377844828892330, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
       propertyPath: _onMouseDown.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 0}
@@ -3402,7 +3406,13 @@ PrefabInstance:
       propertyPath: normal
       value: 
       objectReference: {fileID: 103630561, guid: e750c7b9193ee4048a9beb92c85e4d03, type: 3}
-    m_RemovedComponents: []
+    - target: {fileID: 2335222090339767012, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 467377844828892330, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
+    - {fileID: 2335222090339767012, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 37efcddffc1baac4aa6a2ab4c05785d2, type: 3}
 --- !u!1001 &1922551772
 PrefabInstance:
