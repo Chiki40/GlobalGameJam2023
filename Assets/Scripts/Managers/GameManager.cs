@@ -187,7 +187,7 @@ public class GameManager : MonoBehaviour
 
 		if (_gamePlaying && (_gameState == EGameState.PHOTO || _gameState == EGameState.TREE))
 		{
-			UtilSound.Instance.PlaySound("SelectPhoto");
+			UtilSound.Instance.PlaySound("SelectPhoto", volume:0.45f);
 			_controlsBlocked = true;
 			CommonManagers.Instance.GoToCharacterFromGame();
 			_character.sprite = charInfo.CharacterSprite;
@@ -319,5 +319,10 @@ public class GameManager : MonoBehaviour
 		{
 			_cachedPhotoColliders[i].enabled = enable;
 		}
+	}
+
+	public void PlayHoverSFX()
+	{
+		UtilSound.Instance.PlaySound("Hover");
 	}
 }
