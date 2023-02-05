@@ -1,11 +1,29 @@
+using System;
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
 	private enum EGameState { PHOTO = 0, CHARACTER = 1, TREE = 2};
+
+	[System.Serializable]
+	public struct LevelData
+	{
+		public List<GameObject> fotoCharactersToShow;
+		public List<GameObject> arbolImagesToUnlock;
+		public List<GameObject> arbolImagesToLockAfterCompleted;
+		public Image background;
+	}
+
+	[SerializeField]
+	protected List<LevelData> levels;
+
+	[SerializeField]
+	int currentLevel = 0;
 
 	[SerializeField]
 	protected bool _introSaw = false;
@@ -101,6 +119,7 @@ public class GameManager : MonoBehaviour
 			_gamePlaying = true;
 			_introSaw = true;
 			SwitchToPhotoCamera(true);
+			PrepareLevel(levels[0]);
 		}
 	}
 
@@ -169,7 +188,17 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
-	public void SwitchToTree()
+    internal bool CheckCurrentLevel(int numCorrect)
+    {
+		int correctNeeded = 0;
+        for (int i = 0; i < currentLevel; ++i)
+		{
+			correctNeeded += levels[i].arbolImagesToUnlock.Count;
+		}
+		return numCorrect >= correctNeeded;
+    }
+
+    public void SwitchToTree()
 	{
 		if (_controlsBlocked)
 		{
@@ -199,6 +228,64 @@ public class GameManager : MonoBehaviour
 	public void CloseDialogue()
 	{
 		_characterMonologueGameObject.SetActive(false);
+	}
+
+	public void OnLevelCompleted()
+	{
+		FinishLevel(levels[currentLevel]);
+		++currentLevel;
+		if (currentLevel > levels.Count)
+		{
+			OnGameEnd();
+		}
+		else
+		{
+			PrepareLevel(levels[currentLevel]);
+		}
+	}
+
+	private void FinishLevel(LevelData levelData)
+	{
+		foreach (GameObject imageToUnlock in levelData.arbolImagesToUnlock)
+		{
+			imageToUnlock.GetComponent<Button>().enabled = false;
+		}
+		levelData.background.enabled = false;
+	}
+
+	private void PrepareLevel(LevelData levelData)
+	{
+		foreach (GameObject imageToUnlock in levelData.arbolImagesToUnlock)
+		{
+			imageToUnlock.SetActive(true);
+		}
+
+		foreach (GameObject gameObjectToShow in levelData.fotoCharactersToShow)
+		{
+			gameObjectToShow.SetActive(true);
+		}
+
+		IEnumerator ShowBackground(Image background)
+		{
+			//Color color = background.color;
+			//color.a = 0;
+			yield return null;
+			levelData.background.enabled = true;
+			//float totalTime = 0;
+			//while (totalTime < 2)
+			//{
+			//	color.a = 
+			//	background.color = color.a
+			//}
+			//background.color = 
+		}
+		StartCoroutine(ShowBackground(levelData.background));
+		
+	}
+
+	private void OnGameEnd()
+	{
+		SceneManager.LoadScene("Victory");
 	}
 
 	private void EnablePhotoColliders(bool enable)

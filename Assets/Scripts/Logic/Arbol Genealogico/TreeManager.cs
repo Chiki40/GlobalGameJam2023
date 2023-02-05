@@ -121,9 +121,9 @@ public class TreeManager : MonoBehaviour
             }
         }
       
-        if(numCorrect == allElements.Length)
+        if (GameManager.Instance.CheckCurrentLevel(numCorrect))
         {
-            SceneManager.LoadScene("Victory");
+            GameManager.Instance.OnLevelCompleted();
         }
 
     }
