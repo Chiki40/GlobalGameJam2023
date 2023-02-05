@@ -9,6 +9,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: MAT_ARBOL_GENEALOGICO
     second: {fileID: 2100000, guid: 1422e1f651a72ba4e8979d9b9cf1f370, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_DORADO
+    second: {fileID: 2100000, guid: 30cdae417c0aced4da2b103fcf178ae6, type: 2}
   materials:
     materialImportMode: 2
     materialName: 1

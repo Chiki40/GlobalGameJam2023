@@ -32,6 +32,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: MAT_Orange
+    second: {fileID: 2100000, guid: c02870d16b4597b49ac7cd2157b89fe2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: MAT_Wall
     second: {fileID: 2100000, guid: c62ce5e9e9502d743825b0b1496bb885, type: 2}
   - first:

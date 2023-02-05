@@ -7,6 +7,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: MAT_DORADO
+    second: {fileID: 2100000, guid: 30cdae417c0aced4da2b103fcf178ae6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: MAT_Foto_familia
     second: {fileID: 2100000, guid: 56155604f0e286145a62cd765448781a, type: 2}
   materials:
