@@ -24,7 +24,6 @@ public class MainMenuManager : MonoBehaviour
 			yield return null;
 			SceneManager.SetActiveScene(SceneManager.GetSceneByName("Game"));
 		}
-		UtilSound.Instance.PlaySound("MainTheme", 1, true);
 		_buttons = transform.GetComponentsInChildren<Button>();
 	}
 
@@ -94,6 +93,7 @@ public class MainMenuManager : MonoBehaviour
 
 	public void OnCredits()
 	{
+		UtilSound.Instance.PlaySound("Sonido de comienzo");
 		EnableButtons(false);
 		_exitingMenuToCredits = true;
 	}

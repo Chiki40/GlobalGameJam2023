@@ -34,6 +34,10 @@ public class CommonManagers : MonoBehaviour
 	private static CommonManagers _instance;
 	public static CommonManagers Instance => _instance;
 
+	protected void Start()
+	{
+		UtilSound.Instance.PlaySound("MainTheme", 1, true);
+	}
 	protected void StopPlayableDirector(PlayableDirector director)
 	{
 		director.Stop();
@@ -130,6 +134,7 @@ public class CommonManagers : MonoBehaviour
 		_mainMenuCam.Priority = kLowPriorityCam;
 		SceneManager.UnloadSceneAsync("MainMenu");
 		GameManager.Instance.StartGame();
+		UtilSound.Instance.PlaySound("Game", 1, true);
 	}
 
 	public void GoToGameFromMainMenu()
@@ -160,6 +165,8 @@ public class CommonManagers : MonoBehaviour
 				menuManager.InstantHide();
 			}
 			PlayPlayableDirector(_mainMenuFromGamePlayable);
+			UtilSound.Instance.PlaySound("MainTheme", 1, true);
+			UtilSound.Instance.StopSound("Game", 2);
 		}
 
 		StartCoroutine(GoToMainMenuFromGameCoroutine());
