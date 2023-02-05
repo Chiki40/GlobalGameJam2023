@@ -113,9 +113,14 @@ public class GameManager : MonoBehaviour
 			}
 			else if (_gameState == EGameState.TREE)
 			{
-				SwitchToCharacterCamera(_currentCharacterInfo);
+				SwitchToCharacterCamera();
 			}
 		}
+	}
+
+	public void SwitchToCharacterCamera()
+	{
+		SwitchToCharacterCamera(_currentCharacterInfo);
 	}
 
 	public void StartGame()
