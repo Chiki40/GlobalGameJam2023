@@ -141,7 +141,7 @@ public class CommonManagers : MonoBehaviour
 
 	public void GoToGameFromMainMenu()
 	{
-		PlayPlayableDirector(GameManager.Instance.introSaw ? _gameFromMainMenuSpeedPlayable:_gameFromMainMenuPlayable);
+		PlayPlayableDirector(GameManager.Instance.introSaw ? _gameFromMainMenuSpeedPlayable :_gameFromMainMenuPlayable);
 	}
 
 	public void OnFinishedGoToMainMenuFromGame()
